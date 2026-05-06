@@ -14,10 +14,10 @@
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header">
-      <nav class="navbar" aria-label="Main navigation">
-        <a class="logo" href="#" aria-label="GirlsCARE home">
-          <span class="logo__wordmark">GirlsCARE</span>
-          <span class="logo__tagline">[Insert Logo Tagline Here]</span>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="GirlsCARE home">
+          <span class="brand__name">GirlsCARE</span>
+          <span class="brand__tagline">[Insert Logo Tagline Here]</span>
         </a>
 
         <ul class="nav-links">
@@ -31,34 +31,62 @@
     </header>
 
     <main id="main-content">
-      <section class="alert-strip" aria-label="[Insert Alert Bar Label Here]">
+      <section class="notice" aria-label="[Insert Announcement Label Here]">
         <p>[Insert Timely Announcement Or Campaign Message Here]</p>
-        <a href="#">Learn More Here</a>
+        <a href="#">[Insert Announcement Link Text Here]</a>
       </section>
 
-      <section class="hero" id="home">
-        <div class="hero__media">
-          <img
-            src="https://placehold.co/980x980/e8e4d2/0f2b16?text=Hero+Image+Placeholder"
-            alt="[Insert descriptive alt text for hero image here]"
-          />
-        </div>
-
-        <div class="hero__content">
-          <div class="wave-lines wave-lines--hero" aria-hidden="true"></div>
-          <p class="eyebrow">[Insert Optional Eyebrow Text Here]</p>
-          <h1>[Insert Bold GirlsCARE Hero Headline Here]</h1>
-          <p class="hero__subheadline">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="section-kicker">[Insert Region Or Community Theme Here]</p>
+          <h1 id="hero-title">[Insert Bold GirlsCARE Hero Headline Here]</h1>
+          <p>
             [Insert Hero Subheadline Or Short Mission Statement Here]
           </p>
-          <a class="button button--light" href="#about">Learn More</a>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#about">Learn More</a>
+            <a class="button button--secondary" href="#programs">
+              [Insert Secondary CTA Here]
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero__visual">
+          <img
+            src="https://placehold.co/1200x900/f4ead2/123025?text=Large+Hero+Image+Placeholder"
+            alt="[Insert descriptive alt text for hero image here]"
+          />
+          <figcaption>[Insert Hero Image Caption Here]</figcaption>
+          <span class="hero__badge">[Insert Short Impact Label Here]</span>
+        </figure>
+      </section>
+
+      <section
+        class="care-strip"
+        aria-label="[Insert Community Values Label Here]"
+      >
+        <div class="care-strip__item">
+          <span>[Insert Value 01]</span>
+        </div>
+        <div class="care-strip__item">
+          <span>[Insert Value 02]</span>
+        </div>
+        <div class="care-strip__item">
+          <span>[Insert Value 03]</span>
         </div>
       </section>
 
-      <section class="about-section" id="about" aria-labelledby="about-title">
-        <div class="section-shell about-section__grid">
-          <div class="about-section__copy">
-            <p class="eyebrow">About Us</p>
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="section-shell about__grid">
+          <figure class="about__image">
+            <img
+              src="https://placehold.co/980x760/1d7f68/fff8e7?text=About+Image+Placeholder"
+              alt="[Insert descriptive alt text for about image here]"
+            />
+          </figure>
+
+          <div class="about__content">
+            <p class="section-kicker">About Us</p>
             <h2 id="about-title">[Insert About Us Headline Here]</h2>
             <p>
               [Insert brief GirlsCARE overview here. Describe the organization,
@@ -66,59 +94,31 @@
             </p>
             <a class="text-link" href="#">[Insert About Page Link Text Here]</a>
           </div>
-
-          <figure class="about-section__image">
-            <img
-              src="https://placehold.co/900x720/f6f4e7/0f2b16?text=About+Image+Placeholder"
-              alt="[Insert descriptive alt text for about image here]"
-            />
-          </figure>
         </div>
       </section>
 
-      <section
-        class="statement-band"
-        aria-label="[Insert Impact Statement Label Here]"
-      >
-        <div class="section-shell statement-band__inner">
-          <h2>[Insert Short Impact Statement Or Community Quote Here]</h2>
-          <div class="statement-band__stats" aria-label="[Insert Stats Label Here]">
-            <article>
-              <strong>[Insert Stat]</strong>
-              <span>[Insert Stat Label Here]</span>
-            </article>
-            <article>
-              <strong>[Insert Stat]</strong>
-              <span>[Insert Stat Label Here]</span>
-            </article>
-            <article>
-              <strong>[Insert Stat]</strong>
-              <span>[Insert Stat Label Here]</span>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="programs-section"
-        id="programs"
-        aria-labelledby="programs-title"
-      >
+      <section class="programs" id="programs" aria-labelledby="programs-title">
         <div class="section-shell">
-          <div class="programs-section__header">
-            <p class="eyebrow">Programs</p>
+          <div class="section-heading">
+            <p class="section-kicker">Programs</p>
             <h2 id="programs-title">
               [Insert Programs Section Headline Here]
             </h2>
+            <p>
+              [Insert Programs Section Intro Here]
+            </p>
           </div>
 
           <div class="programs-grid">
-            <article class="program-card program-card--featured">
-              <img
-                src="https://placehold.co/520x680/1959c9/ffffff?text=Mentorship+Image"
-                alt="[Insert descriptive alt text for Mentorship image here]"
-              />
-              <div class="program-card__content">
+            <article class="program-card program-card--feature">
+              <div class="program-card__image">
+                <img
+                  src="https://placehold.co/760x560/f7bd36/123025?text=Mentorship+Image"
+                  alt="[Insert descriptive alt text for Mentorship image here]"
+                />
+              </div>
+              <div class="program-card__body">
+                <span class="program-card__number">01</span>
                 <p class="program-card__label">Flagship Initiative</p>
                 <h3>Mentorship</h3>
                 <p>[Insert Mentorship Program Description Here]</p>
@@ -126,33 +126,42 @@
             </article>
 
             <article class="program-card">
-              <img
-                src="https://placehold.co/520x680/e64b2e/ffffff?text=Hurricane+Relief+Image"
-                alt="[Insert descriptive alt text for Hurricane Relief image here]"
-              />
-              <div class="program-card__content">
+              <div class="program-card__image">
+                <img
+                  src="https://placehold.co/760x560/ef6548/fff8e7?text=Hurricane+Relief+Image"
+                  alt="[Insert descriptive alt text for Hurricane Relief image here]"
+                />
+              </div>
+              <div class="program-card__body">
+                <span class="program-card__number">02</span>
                 <h3>Hurricane Relief</h3>
                 <p>[Insert Hurricane Relief Program Description Here]</p>
               </div>
             </article>
 
             <article class="program-card">
-              <img
-                src="https://placehold.co/520x680/118549/ffffff?text=Resilience+Image"
-                alt="[Insert descriptive alt text for Envisioning Resilience image here]"
-              />
-              <div class="program-card__content">
+              <div class="program-card__image">
+                <img
+                  src="https://placehold.co/760x560/2e9f9a/fff8e7?text=Resilience+Image"
+                  alt="[Insert descriptive alt text for Envisioning Resilience image here]"
+                />
+              </div>
+              <div class="program-card__body">
+                <span class="program-card__number">03</span>
                 <h3>Envisioning Resilience</h3>
                 <p>[Insert Envisioning Resilience Program Description Here]</p>
               </div>
             </article>
 
             <article class="program-card">
-              <img
-                src="https://placehold.co/520x680/f4efe0/0f2b16?text=Care+Collective+Image"
-                alt="[Insert descriptive alt text for Care Collective image here]"
-              />
-              <div class="program-card__content">
+              <div class="program-card__image">
+                <img
+                  src="https://placehold.co/760x560/7460aa/fff8e7?text=Care+Collective+Image"
+                  alt="[Insert descriptive alt text for Care Collective image here]"
+                />
+              </div>
+              <div class="program-card__body">
+                <span class="program-card__number">04</span>
                 <h3>Care Collective</h3>
                 <p>[Insert Care Collective Program Description Here]</p>
               </div>
@@ -161,33 +170,76 @@
         </div>
       </section>
 
-      <section class="blog-preview" id="blog" aria-labelledby="blog-title">
-        <div class="section-shell blog-preview__grid">
-          <figure class="blog-preview__image">
-            <img
-              src="https://placehold.co/760x540/f6f4e7/0f2b16?text=Blog+or+Report+Image"
-              alt="[Insert descriptive alt text for featured blog image here]"
-            />
-          </figure>
-
+      <section
+        class="community-note"
+        aria-label="[Insert Community Quote Label Here]"
+      >
+        <div class="section-shell community-note__grid">
           <div>
-            <p class="eyebrow">Blog</p>
-            <h2 id="blog-title">[Insert Featured Story Headline Here]</h2>
-            <p>[Insert Featured Blog Or News Preview Text Here]</p>
-            <a class="text-link text-link--light" href="#">
-              [Insert Blog Link Text Here]
-            </a>
+            <p class="section-kicker">[Insert Community Voice Label Here]</p>
+            <blockquote>
+              <p>[Insert Community Quote Or Impact Statement Here]</p>
+            </blockquote>
+          </div>
+          <dl class="impact-list">
+            <div>
+              <dt>[Insert Stat]</dt>
+              <dd>[Insert Stat Label Here]</dd>
+            </div>
+            <div>
+              <dt>[Insert Stat]</dt>
+              <dd>[Insert Stat Label Here]</dd>
+            </div>
+            <div>
+              <dt>[Insert Stat]</dt>
+              <dd>[Insert Stat Label Here]</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="journal" id="blog" aria-labelledby="blog-title">
+        <div class="section-shell journal__grid">
+          <div class="journal__intro">
+            <p class="section-kicker">Blog</p>
+            <h2 id="blog-title">[Insert Blog Section Headline Here]</h2>
+            <p>[Insert Blog Section Intro Here]</p>
+            <a class="text-link" href="#">[Insert Blog Link Text Here]</a>
+          </div>
+
+          <div class="journal-list" aria-label="[Insert Blog List Label Here]">
+            <article class="journal-card">
+              <img
+                src="https://placehold.co/540x360/f4ead2/123025?text=Blog+Image+01"
+                alt="[Insert descriptive alt text for blog image one here]"
+              />
+              <div>
+                <p class="journal-card__meta">[Insert Category Or Date Here]</p>
+                <h3>[Insert Featured Blog Post Title Here]</h3>
+              </div>
+            </article>
+
+            <article class="journal-card">
+              <img
+                src="https://placehold.co/540x360/2e9f9a/fff8e7?text=Blog+Image+02"
+                alt="[Insert descriptive alt text for blog image two here]"
+              />
+              <div>
+                <p class="journal-card__meta">[Insert Category Or Date Here]</p>
+                <h3>[Insert Featured Blog Post Title Here]</h3>
+              </div>
+            </article>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer" id="contact">
-      <div class="section-shell site-footer__grid">
-        <div>
-          <a class="logo logo--footer" href="#" aria-label="GirlsCARE home">
-            <span class="logo__wordmark">GirlsCARE</span>
-            <span class="logo__tagline">[Insert Logo Tagline Here]</span>
+      <div class="section-shell footer-grid">
+        <div class="footer-about">
+          <a class="brand brand--footer" href="#home" aria-label="GirlsCARE home">
+            <span class="brand__name">GirlsCARE</span>
+            <span class="brand__tagline">[Insert Logo Tagline Here]</span>
           </a>
           <p>[Insert Footer Mission Or Organization Summary Here]</p>
         </div>
@@ -209,8 +261,8 @@
         </div>
       </div>
 
-      <div class="site-footer__bottom">
-        <p>&copy; <span>2026</span> GirlsCARE. [Insert Copyright Text Here]</p>
+      <div class="footer-bottom">
+        <p>&copy; 2026 GirlsCARE. [Insert Copyright Text Here]</p>
       </div>
     </footer>
   </body>
