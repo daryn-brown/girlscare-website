@@ -4,6 +4,18 @@
    and FRIDA (youngfeministfund.org) — an original interpretation, not a copy.
    ========================================================================== */
 
+/* Blackout (Midnight) — Tyler Finck / The League of Moveable Type, SIL OFL 1.1.
+   Self-hosted display face for the FRIDA-style filled all-caps headlines.
+   License: assets/fonts/OFL.txt */
+@font-face {
+  font-family: "Blackout Midnight";
+  src: url("assets/fonts/blackout-midnight.woff2") format("woff2"),
+    url("assets/fonts/blackout-midnight.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Brand colour blocks */
   --magenta: #e23171;
@@ -31,7 +43,8 @@
   --radius-pill: 2.5rem;
 
   /* Type */
-  --font-heading: "Lilita One", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Blackout Midnight", "Lilita One", ui-sans-serif, system-ui,
+    sans-serif;
   --font-display: "Jost", "Futura", ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", sans-serif;
   --font-body: "Jost", ui-sans-serif, system-ui, -apple-system,
@@ -125,8 +138,9 @@ h3 {
   margin: 0;
   font-family: var(--font-heading);
   font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.05;
+  letter-spacing: 0.02em;
+  line-height: 1.02;
+  text-transform: uppercase;
 }
 
 /* Kicker / eyebrow */
@@ -823,9 +837,14 @@ h3 {
 }
 
 .community-note blockquote p {
-  max-width: 16ch;
+  max-width: 18ch;
   color: var(--white);
-  font-size: clamp(2.4rem, 5.2vw, 5rem);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.4vw, 4rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  text-transform: none;
 }
 
 .impact-list {
