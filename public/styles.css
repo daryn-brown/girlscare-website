@@ -135,6 +135,7 @@ h3 {
 .why h2,
 .programs h2,
 .get-involved h2,
+.gallery h2,
 .journal h2 {
   margin: 0;
   font-family: var(--font-heading);
@@ -634,6 +635,7 @@ h3 {
 .why h2,
 .programs h2,
 .get-involved h2,
+.gallery h2,
 .journal h2 {
   color: var(--ink);
   font-size: clamp(2.6rem, 5.6vw, 5.4rem);
@@ -1299,6 +1301,40 @@ h3 {
   background: var(--paper-2);
 }
 
+/* Photo gallery — network in action */
+.gallery {
+  padding-block: var(--section-space);
+  background: var(--white);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.6rem, 1.4vw, 1.1rem);
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery__item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.gallery__item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery__item:hover img {
+  transform: scale(1.04);
+}
+
 /* Partners / funders trust strip */
 .partners {
   padding-block: clamp(2.75rem, 5vw, 4rem);
@@ -1611,6 +1647,10 @@ h3 {
   .why__grid,
   .journal__grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
