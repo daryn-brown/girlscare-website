@@ -134,6 +134,7 @@ h3 {
 .about h2,
 .why h2,
 .programs h2,
+.get-involved h2,
 .journal h2 {
   margin: 0;
   font-family: var(--font-heading);
@@ -632,6 +633,7 @@ h3 {
 .about h2,
 .why h2,
 .programs h2,
+.get-involved h2,
 .journal h2 {
   color: var(--ink);
   font-size: clamp(2.6rem, 5.6vw, 5.4rem);
@@ -1289,6 +1291,100 @@ h3 {
 .journal-card__link:hover {
   gap: 0.65rem;
   text-decoration: underline;
+}
+
+/* Get Involved — conversion hub */
+.get-involved {
+  padding-block: var(--section-space);
+  background: var(--paper-2);
+}
+
+.get-involved__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin: clamp(2.5rem, 5vw, 3.75rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.get-involved__card {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+  padding: 1.6rem 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.get-involved__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--paper-2);
+  color: var(--magenta-deep);
+}
+
+.get-involved__icon svg {
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+.get-involved__card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.get-involved__card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.get-involved__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  margin-top: 0.35rem;
+  color: var(--magenta-deep);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: gap 0.18s ease;
+}
+
+.get-involved__link:hover {
+  gap: 0.7rem;
+  text-decoration: underline;
+}
+
+/* Primary action stands out from the rest */
+.get-involved__card--primary {
+  background: var(--magenta-deep);
+}
+
+.get-involved__card--primary h3,
+.get-involved__card--primary p {
+  color: var(--white);
+}
+
+.get-involved__card--primary .get-involved__icon {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--white);
+}
+
+.get-involved__card--primary .get-involved__link {
+  color: var(--white);
 }
 
 /* Footer — deep, confident */
