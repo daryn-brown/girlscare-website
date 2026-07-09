@@ -859,6 +859,44 @@ h3 {
   line-height: 1.6;
 }
 
+.coordinator-card__more {
+  margin-top: 0.85rem;
+}
+
+.coordinator-card__more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--magenta-deep);
+}
+
+.coordinator-card__more summary::-webkit-details-marker {
+  display: none;
+}
+
+.coordinator-card__more summary::after {
+  content: "＋";
+  font-weight: 700;
+  line-height: 1;
+}
+
+.coordinator-card__more[open] summary::after {
+  content: "－";
+}
+
+.coordinator-card__more summary:hover {
+  text-decoration: underline;
+}
+
+.coordinator-card__more[open] summary {
+  margin-bottom: 0.6rem;
+}
+
 @media (max-width: 60rem) {
   .coordinators-grid {
     grid-template-columns: 1fr;
