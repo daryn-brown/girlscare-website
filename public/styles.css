@@ -279,6 +279,20 @@ h3 {
   background: #ffd866;
 }
 
+.notice__tag {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.55rem;
+  padding: 0.12rem 0.55rem;
+  background: var(--yellow);
+  color: var(--ink);
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* Hero — bold gradient split */
 .hero {
   position: relative;
@@ -402,17 +416,30 @@ h3 {
   border-color: var(--yellow);
 }
 
+/* Hero secondary CTA is intentionally quiet — a text link, not a button,
+   so the single primary "Join the network" action clearly stands out. */
 .hero .button--secondary {
+  min-height: 3.5rem;
+  padding-inline: 0.35rem;
   background: transparent;
   color: var(--white);
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: transparent;
+  text-decoration: underline;
+  text-underline-offset: 0.28rem;
+  text-decoration-thickness: 0.12rem;
+}
+
+.hero .button--secondary::after {
+  content: "\2192";
+  margin-left: 0.5rem;
 }
 
 .hero .button--secondary:hover,
 .hero .button--secondary:focus-visible {
-  background: rgba(255, 255, 255, 0.14);
-  color: var(--white);
-  border-color: var(--white);
+  background: transparent;
+  color: var(--yellow);
+  border-color: transparent;
+  transform: translateY(-0.12rem);
 }
 
 /* Hero image */
