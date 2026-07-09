@@ -132,6 +132,7 @@ h3 {
 /* Shared display headings */
 .hero h1,
 .about h2,
+.why h2,
 .programs h2,
 .community-note blockquote p,
 .journal h2 {
@@ -630,6 +631,7 @@ h3 {
 }
 
 .about h2,
+.why h2,
 .programs h2,
 .journal h2 {
   color: var(--ink);
@@ -674,6 +676,70 @@ h3 {
 .text-link:focus-visible {
   background: var(--magenta-deep);
   transform: translateY(-0.12rem);
+}
+
+/* Why GirlsCARE — story / rationale */
+.why {
+  padding-block: var(--section-space);
+  background: var(--paper-2);
+}
+
+.why__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  align-items: start;
+}
+
+.why h2 {
+  font-size: clamp(2.2rem, 4.6vw, 3.9rem);
+}
+
+.why__lead > p:not(.section-kicker) {
+  max-width: 34rem;
+  margin: 1.3rem 0 0;
+  font-size: clamp(1.15rem, 1.6vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.why__reasons {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.why__reasons li {
+  padding: 1.4rem 1.6rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  border-left: 0.35rem solid var(--magenta);
+}
+
+.why__reasons li:nth-child(2) {
+  border-left-color: var(--purple);
+}
+
+.why__reasons li:nth-child(3) {
+  border-left-color: var(--teal);
+}
+
+.why__reasons h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.why__reasons p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.55;
 }
 
 /* Coordinators */
@@ -1183,6 +1249,7 @@ h3 {
 @media (max-width: 60rem) {
   .hero,
   .about__grid,
+  .why__grid,
   .community-note__grid,
   .journal__grid {
     grid-template-columns: 1fr;
