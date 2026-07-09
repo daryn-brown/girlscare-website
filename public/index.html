@@ -755,7 +755,36 @@
             across Jamaica and the Caribbean to lead on climate adaptation and
             resilience.
           </p>
+
+          <!-- DRAFT: wire this form up to a real email provider (e.g. Mailchimp) -->
+          <form class="footer-newsletter" action="#" method="post" aria-labelledby="newsletter-heading">
+            <span class="footer-newsletter__heading" id="newsletter-heading">Get updates from GirlsCARE</span>
+            <div class="footer-newsletter__row">
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input
+                id="newsletter-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Your email address"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </div>
+          </form>
         </div>
+
+        <nav class="footer-nav" aria-label="Footer">
+          <strong>Explore</strong>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Programmes</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#get-involved">Get involved</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
 
         <address>
           <strong>Contact</strong>
@@ -767,15 +796,15 @@
           <a href="tel:[InsertPhoneHere]">[Insert Phone Number Here]</a>
         </address>
 
-        <div>
-          <strong>Social</strong>
+        <div class="footer-social">
+          <strong>Follow</strong>
           <ul class="social-links" aria-label="Social media links">
             <!-- DRAFT (sourced): real Instagram handle @girlscareja -->
-            <li><a href="https://www.instagram.com/girlscareja/" aria-label="GirlsCARE on Instagram">IG</a></li>
+            <li><a href="https://www.instagram.com/girlscareja/" aria-label="GirlsCARE on Instagram">Instagram</a></li>
             <!-- DRAFT-UNVERIFIED: add real Facebook URL | original: [Insert Facebook URL Here] -->
-            <li><a href="#" aria-label="[Insert Facebook URL Here]">FB</a></li>
+            <li><a href="#" aria-label="GirlsCARE on Facebook (add URL)">Facebook</a></li>
             <!-- DRAFT-UNVERIFIED: add real LinkedIn URL | original: [Insert LinkedIn URL Here] -->
-            <li><a href="#" aria-label="[Insert LinkedIn URL Here]">IN</a></li>
+            <li><a href="#" aria-label="GirlsCARE on LinkedIn (add URL)">LinkedIn</a></li>
           </ul>
         </div>
       </div>
@@ -783,6 +812,10 @@
       <div class="footer-bottom">
         <!-- DRAFT: copyright | original: [Insert Copyright Text Here] -->
         <p>&copy; 2026 GirlsCARE. All rights reserved.</p>
+        <ul class="footer-legal" aria-label="Legal">
+          <!-- DRAFT-UNVERIFIED: link to a real privacy policy page when available -->
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
       </div>
     </footer>
   </body>
