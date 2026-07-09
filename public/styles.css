@@ -136,6 +136,7 @@ h3 {
 .programs h2,
 .get-involved h2,
 .gallery h2,
+.reach h2,
 .journal h2 {
   margin: 0;
   font-family: var(--font-heading);
@@ -636,6 +637,7 @@ h3 {
 .programs h2,
 .get-involved h2,
 .gallery h2,
+.reach h2,
 .journal h2 {
   color: var(--ink);
   font-size: clamp(2.6rem, 5.6vw, 5.4rem);
@@ -804,6 +806,82 @@ h3 {
   margin: 0;
   color: var(--ink-soft);
   line-height: 1.55;
+}
+
+/* Regional reach — map */
+.reach {
+  padding-block: var(--section-space);
+  background: var(--paper);
+}
+
+.reach__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.reach h2 {
+  font-size: clamp(2rem, 3.4vw, 3.2rem);
+}
+
+.reach__intro > p:not(.section-kicker) {
+  max-width: 40rem;
+  margin: 1.2rem 0 0;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.reach__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reach__list li {
+  padding: 0.4rem 0.9rem;
+  background: var(--white);
+  border: 1px solid var(--paper-2);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.reach__map {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: end;
+}
+
+.reach__map iframe {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.reach__map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--magenta-deep);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: gap 0.18s ease;
+}
+
+.reach__map-link:hover {
+  gap: 0.7rem;
+  text-decoration: underline;
 }
 
 /* Coordinators */
@@ -1645,6 +1723,7 @@ h3 {
   .hero,
   .about__grid,
   .why__grid,
+  .reach__grid,
   .journal__grid {
     grid-template-columns: 1fr;
   }
