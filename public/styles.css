@@ -166,7 +166,7 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.6rem;
-  color: var(--magenta);
+  color: var(--magenta-deep);
   font-family: var(--font-display);
   font-size: clamp(0.78rem, 1vw, 0.95rem);
   font-weight: 700;
@@ -477,8 +477,8 @@ h3 {
 
 .hero__visual figcaption {
   max-width: 30rem;
-  padding: 0.6rem 0.9rem;
-  background: rgba(36, 16, 25, 0.28);
+  padding: 0.65rem 0.95rem;
+  background: rgba(36, 16, 25, 0.72);
   border-radius: 0.7rem;
   color: var(--white);
   font-size: 0.92rem;
@@ -1884,9 +1884,18 @@ h3 {
 
   .hero h1,
   .about h2,
+  .why h2,
   .programs h2,
+  .get-involved h2,
+  .gallery h2,
   .journal h2 {
     font-size: clamp(2.6rem, 13vw, 4.2rem);
+  }
+
+  /* Keep small uppercase labels legible on small screens */
+  .program-card__label,
+  .journal-card__meta {
+    font-size: 0.78rem;
   }
 
   .hero__actions {
