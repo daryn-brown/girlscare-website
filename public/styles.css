@@ -937,6 +937,10 @@ h3 {
   object-fit: cover;
 }
 
+.coordinator-card:nth-child(2) .coordinator-card__photo img {
+  object-position: center 24%;
+}
+
 .coordinator-card h3 {
   margin: 0 0 0.6rem;
   font-family: var(--font-display);
