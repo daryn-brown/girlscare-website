@@ -1,20 +1,7 @@
 /* ==========================================================================
    GirlsCARE — vibrant brand system
-   Bold, colourful, community-centred. Inspired by the GirlsCARE Instagram
-   and FRIDA (youngfeministfund.org) — an original interpretation, not a copy.
+   Bold, colourful, community-centred, and grounded in GirlsCARE's own identity.
    ========================================================================== */
-
-/* Blackout (Midnight) — Tyler Finck / The League of Moveable Type, SIL OFL 1.1.
-   Self-hosted display face for the FRIDA-style filled all-caps headlines.
-   License: assets/fonts/OFL.txt */
-@font-face {
-  font-family: "Blackout Midnight";
-  src: url("assets/fonts/blackout-midnight.woff2") format("woff2"),
-    url("assets/fonts/blackout-midnight.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
   /* Brand colour blocks */
@@ -43,8 +30,7 @@
   --radius-pill: 2.5rem;
 
   /* Type */
-  --font-heading: "Blackout Midnight", "Lilita One", ui-sans-serif, system-ui,
-    sans-serif;
+  --font-heading: "Lilita One", "Jost", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Jost", "Futura", ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", sans-serif;
   --font-body: "Jost", ui-sans-serif, system-ui, -apple-system,
