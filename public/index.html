@@ -31,7 +31,7 @@
       href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&family=Lilita+One&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -49,7 +49,9 @@
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#programs">Programs</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#programs">Programmes</a></li>
+          <li><a href="#get-involved">Get involved</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -57,12 +59,16 @@
     </header>
 
     <main id="main-content">
-      <!-- DRAFT-UNVERIFIED: announcement is timely — replace with a current message.
+      <!-- DRAFT-UNVERIFIED: announcement — replace with a current, timely message
+           (campaign, event, or application window).
            original message: [Insert Timely Announcement Or Campaign Message Here]
            original link text: [Insert Announcement Link Text Here] -->
       <section class="notice" aria-label="Announcement">
-        <p>A young feminist-led climate network for women and girls across Jamaica &amp; the Caribbean.</p>
-        <a href="#about">Learn more</a>
+        <p>
+          <span class="notice__tag">New</span>
+          Applications for the next GirlsCARE mentorship cohort open soon.
+        </p>
+        <a href="#get-involved">Get involved</a>
       </section>
 
       <section class="hero" id="home" aria-labelledby="hero-title">
@@ -70,34 +76,67 @@
           <!-- DRAFT (sourced): region/theme | original: [Insert Region Or Community Theme Here] -->
           <p class="section-kicker">Climate Justice · Jamaica &amp; the Caribbean</p>
           <!-- DRAFT-UNVERIFIED: hero headline | original: [Insert Bold GirlsCARE Hero Headline Here] -->
-          <h1 id="hero-title">Girls leading climate action across the Caribbean</h1>
-          <!-- DRAFT (sourced): hero subheadline | original: [Insert Hero Subheadline Or Short Mission Statement Here] -->
+          <h1 id="hero-title">Girls powering climate justice in the Caribbean</h1>
+          <!-- DRAFT-UNVERIFIED: hero value proposition — states what/who/why in one line.
+               original: [Insert Hero Subheadline Or Short Mission Statement Here] -->
           <p>
-            GirlsCARE is a young feminist-led network empowering women and girls
-            as advocates for climate action that safeguards their economic,
-            social, and environmental rights — building adaptation and resilience
-            nationally and regionally.
+            GirlsCARE is a youth-led movement equipping girls and young women
+            across Jamaica and the Caribbean to lead climate action, build
+            resilience, and shape more just communities.
           </p>
           <div class="hero__actions">
-            <a class="button button--primary" href="#about">Learn More</a>
-            <!-- DRAFT: secondary CTA | original: [Insert Secondary CTA Here] -->
+            <!-- Single primary call to action — the one thing we most want a visitor to do. -->
+            <a class="button button--primary" href="#get-involved">Join the network</a>
+            <!-- DRAFT: secondary CTA, intentionally quieter | original: [Insert Secondary CTA Here] -->
             <a class="button button--secondary" href="#programs">
-              Explore our programs
+              Explore programmes
             </a>
           </div>
         </div>
 
         <figure class="hero__visual">
-          <!-- DRAFT-UNVERIFIED: hero image is still a placeholder. Swap src for a real GirlsCARE photo and confirm alt text. -->
+          <!-- DRAFT image (from shared Drive: Westmoreland/_JRP7212.jpg) — provisional pick; swap when the final hero photo is chosen. -->
           <img
-            src="https://placehold.co/1200x900/16b6bd/241019?text=GirlsCARE+Hero+Image"
-            alt="Young women from the GirlsCARE network together at a climate-action gathering in Jamaica"
+            src="assets/hero-girls-climate-action.jpg"
+            alt="Two young GirlsCARE coordinators carrying a relief storage tote from a van across a storm-affected community in Jamaica"
           />
           <!-- DRAFT-UNVERIFIED: hero caption | original: [Insert Hero Image Caption Here] -->
-          <figcaption>GirlsCARE coordinators and mentees at a network-building session.</figcaption>
+          <figcaption>GirlsCARE coordinators delivering relief supplies to a community after a hurricane.</figcaption>
           <!-- DRAFT (sourced): impact label | original: [Insert Short Impact Label Here] -->
           <span class="hero__badge">Young feminist-led</span>
         </figure>
+      </section>
+
+      <!-- Impact stats surfaced high on the page for immediate credibility. -->
+      <section class="impact-band" id="impact" aria-labelledby="impact-title">
+        <div class="section-shell">
+          <div class="impact-band__head">
+            <p class="section-kicker">Our impact so far</p>
+            <h2 id="impact-title">The movement in numbers</h2>
+          </div>
+          <dl class="impact-band__grid">
+            <div>
+              <!-- DRAFT-UNVERIFIED: example figure — replace with a verified number -->
+              <dt>100+</dt>
+              <dd>Girls &amp; young women engaged</dd>
+            </div>
+            <div>
+              <!-- DRAFT-UNVERIFIED: example figure — replace with a verified number -->
+              <dt>12+</dt>
+              <dd>Communities across the region</dd>
+            </div>
+            <div>
+              <!-- DRAFT (sourced): 5 mentorship pillars -->
+              <dt>5</dt>
+              <dd>Mentorship programme pillars</dd>
+            </div>
+            <div>
+              <!-- Verifiable from the programmes below; update if programmes change -->
+              <dt>4</dt>
+              <dd>Programmes building resilience</dd>
+            </div>
+          </dl>
+        </div>
       </section>
 
       <!-- DRAFT (sourced from acronym: Climate Action for Resilience & Empowerment)
@@ -118,38 +157,151 @@
       </section>
 
       <section class="about" id="about" aria-labelledby="about-title">
-        <div class="section-shell about__grid">
-          <figure class="about__image">
-            <img
-              src="assets/about-girlscare-team.jpg"
-              alt="Six GirlsCARE team members in branded polo shirts standing together on a community road in Jamaica"
-            />
-          </figure>
+        <div class="section-shell">
+          <div class="about__grid">
+            <figure class="about__image">
+              <img
+                src="assets/about-girlscare-team.jpg"
+                alt="Six GirlsCARE team members in branded polo shirts standing together on a community road in Jamaica"
+              />
+            </figure>
 
-          <div class="about__content">
-            <p class="section-kicker">About Us</p>
-            <!-- DRAFT-UNVERIFIED: about headline | original: [Insert About Us Headline Here] -->
-            <h2 id="about-title">A young feminist climate network</h2>
-            <!-- DRAFT (sourced): about overview | original: [Insert brief GirlsCARE overview here...] -->
-            <p>
-              GirlsCARE — Girls Climate Action for Resilience &amp; Empowerment —
-              equips women and girls across Jamaica and the Caribbean to lead on
-              climate adaptation and resilience. Through mentorship, advocacy, and
-              community building, we safeguard the economic, social, and
-              environmental rights of women on the frontlines of the climate
-              crisis.
-            </p>
-            <!-- DRAFT: about link now points to the new Coordinators section | original: [Insert About Page Link Text Here] -->
-            <a class="text-link" href="#coordinators">Meet our coordinators</a>
+            <div class="about__content">
+              <p class="section-kicker">About Us</p>
+              <!-- DRAFT-UNVERIFIED: about headline | original: [Insert About Us Headline Here] -->
+              <h2 id="about-title">A girl-led Caribbean climate network</h2>
+              <!-- DRAFT (sourced): trimmed overview | original: [Insert brief GirlsCARE overview here...] -->
+              <p>
+                GirlsCARE — Girls Climate Action for Resilience &amp; Empowerment —
+                helps women and girls on the frontlines of the climate crisis lead
+                on adaptation, resilience, and their own rights across Jamaica and
+                the Caribbean.
+              </p>
+              <!-- DRAFT: about link points to the Coordinators section | original: [Insert About Page Link Text Here] -->
+              <a class="text-link" href="#coordinators">Meet our coordinators</a>
+            </div>
           </div>
+
+          <!-- Dense overview broken into skimmable Mission / Vision / Approach / Values. -->
+          <ul class="about__pillars">
+            <li class="about__pillar">
+              <span class="about__pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg>
+              </span>
+              <h3>Mission</h3>
+              <!-- DRAFT (sourced) -->
+              <p>Equip girls and young women to lead climate action and build resilience in their communities.</p>
+            </li>
+            <li class="about__pillar">
+              <span class="about__pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6"/></svg>
+              </span>
+              <h3>Vision</h3>
+              <!-- DRAFT-UNVERIFIED -->
+              <p>A Caribbean where young women shape a just, climate-resilient future — and share in its power.</p>
+            </li>
+            <li class="about__pillar">
+              <span class="about__pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-4 1.6L9 15l4-1.6L15 9Z" fill="currentColor" stroke="none"/></svg>
+              </span>
+              <h3>Approach</h3>
+              <!-- DRAFT (sourced) -->
+              <p>Mentorship, advocacy, research, and community care — led by young women, rooted in local realities.</p>
+            </li>
+            <li class="about__pillar">
+              <span class="about__pillar-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-9.4A3.6 3.6 0 0 1 12 8a3.6 3.6 0 0 1 7 2.6c0 5-7 9.4-7 9.4Z"/></svg>
+              </span>
+              <h3>Values</h3>
+              <!-- DRAFT-UNVERIFIED -->
+              <p>Feminist, youth-led, community-driven, and grounded in climate justice.</p>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <!-- ============================================================
-           COORDINATORS — added from the brochure spread you shared.
-           Bios are transcribed/paraphrased from the GirlsCARE brochure
-           (DRAFT, sourced). Verify wording and add real portraits.
-           ============================================================ -->
+      <!-- Story section — answers "why does GirlsCARE exist?" for first-time visitors. -->
+      <section class="why" id="why" aria-labelledby="why-title">
+        <div class="section-shell why__grid">
+          <div class="why__lead">
+            <p class="section-kicker">Why GirlsCARE</p>
+            <!-- DRAFT-UNVERIFIED: framing to confirm with the team -->
+            <h2 id="why-title">Why this movement exists</h2>
+            <!-- DRAFT-UNVERIFIED: advocacy framing — confirm tone and facts with Rodrina -->
+            <p>
+              Across the Caribbean, the climate crisis reaches women and girls
+              first and hardest — yet they are too often left out of the
+              decisions that shape their future. GirlsCARE exists to change that.
+            </p>
+          </div>
+          <ul class="why__reasons">
+            <li>
+              <h3>The gap</h3>
+              <!-- DRAFT-UNVERIFIED -->
+              <p>
+                Young women live on the frontlines of climate impacts but remain
+                under-represented in climate leadership. We help close that gap.
+              </p>
+            </li>
+            <li>
+              <h3>Why girls &amp; young women</h3>
+              <!-- DRAFT-UNVERIFIED -->
+              <p>
+                When girls lead, whole communities grow more resilient. Investing
+                in their power is one of the most effective climate strategies
+                there is.
+              </p>
+            </li>
+            <li>
+              <h3>Why climate</h3>
+              <!-- DRAFT-UNVERIFIED -->
+              <p>
+                Hurricanes, floods, and rising seas threaten Caribbean
+                livelihoods. For us, climate justice and gender justice are
+                inseparable.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Regional reach — free OpenStreetMap embed (no API key). DRAFT: swap the
+           bounding box / marker and the location list for verified coverage. -->
+      <section class="reach" id="reach" aria-labelledby="reach-title">
+        <div class="section-shell reach__grid">
+          <div class="reach__intro">
+            <p class="section-kicker">Where we work</p>
+            <!-- DRAFT-UNVERIFIED: reach headline -->
+            <h2 id="reach-title">Rooted in Jamaica, reaching across the Caribbean</h2>
+            <!-- DRAFT-UNVERIFIED: reach intro -->
+            <p>
+              GirlsCARE is based in Jamaica and connects young women across the
+              wider Caribbean through mentorship, advocacy, and relief work.
+            </p>
+            <!-- DRAFT-UNVERIFIED: confirm the real list of communities / countries reached -->
+            <ul class="reach__list">
+              <li>Jamaica</li>
+              <li>Wider Caribbean region</li>
+              <li>Regional &amp; global youth networks</li>
+            </ul>
+          </div>
+          <div class="reach__map">
+            <iframe
+              title="Map of the Caribbean region where GirlsCARE works"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-85.0%2C9.0%2C-59.0%2C24.0&amp;layer=mapnik&amp;marker=18.11%2C-77.28"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <!-- DRAFT: link opens the same view on OpenStreetMap -->
+            <a
+              class="reach__map-link"
+              href="https://www.openstreetmap.org/?mlat=18.11&amp;mlon=-77.28#map=6/17.5/-72.0"
+              target="_blank"
+              rel="noopener"
+            >View larger map <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
       <section
         class="coordinators"
         id="coordinators"
@@ -169,10 +321,10 @@
 
           <div class="coordinators-grid">
             <article class="coordinator-card">
-              <!-- DRAFT-UNVERIFIED: portrait is a placeholder. Swap src for a real photo. -->
+              <!-- DRAFT image (sourced: GirlsCARE brochure via artofmarc.com/work/girlscare — official labeled B&W headshot). Swap for a verified color portrait once provided. -->
               <div class="coordinator-card__photo">
                 <img
-                  src="https://placehold.co/480x480/ff6b5e/241019?text=Ayesha"
+                  src="assets/coordinator-ayesha.jpg"
                   alt="Portrait of Ayesha Constable, GirlsCARE coordinator"
                 />
               </div>
@@ -180,24 +332,32 @@
                 <h3>Ayesha Constable</h3>
                 <!-- DRAFT (sourced: brochure) — verify wording -->
                 <p>
-                  Ayesha has researched and published on gender and climate change
-                  as part of her doctoral studies, linking her interests in
-                  agriculture, youth, and gender. She has served on several
-                  regional and global youth networks — including the Caribbean
-                  Youth Environment Network and Commonwealth Youth Climate Network —
-                  is former Caribbean Coordinator for the Sustainable Development
-                  Solutions Youth Network, a regional representative for Global
-                  Power Shift (350.org), and a Global Advisor to FRIDA – the Young
+                  Ayesha researches and publishes on gender and climate change
+                  through her doctoral studies, connecting agriculture, youth,
+                  and gender. She is a Global Advisor to FRIDA – the Young
                   Feminist Fund.
                 </p>
+                <!-- Full CV moved into a no-JS accordion so the card stays skimmable. -->
+                <details class="coordinator-card__more">
+                  <summary>Read full bio</summary>
+                  <!-- DRAFT (sourced: brochure) — verify wording -->
+                  <p>
+                    She has served on several regional and global youth networks
+                    — including the Caribbean Youth Environment Network and
+                    Commonwealth Youth Climate Network — is former Caribbean
+                    Coordinator for the Sustainable Development Solutions Youth
+                    Network, and a regional representative for Global Power Shift
+                    (350.org).
+                  </p>
+                </details>
               </div>
             </article>
 
             <article class="coordinator-card">
-              <!-- DRAFT-UNVERIFIED: portrait is a placeholder. Swap src for a real photo. -->
+              <!-- DRAFT image (sourced: GirlsCARE brochure via artofmarc.com/work/girlscare — official labeled B&W headshot). Swap for a verified color portrait once provided. -->
               <div class="coordinator-card__photo">
                 <img
-                  src="https://placehold.co/480x480/16b6bd/241019?text=Jhannel"
+                  src="assets/coordinator-jhannel.jpg"
                   alt="Portrait of Jhannel Tomlinson, GirlsCARE coordinator"
                 />
               </div>
@@ -205,16 +365,23 @@
                 <h3>Jhannel Tomlinson</h3>
                 <!-- DRAFT (sourced: brochure) — verify wording -->
                 <p>
-                  Jhannel Tomlinson is a PhD candidate whose research focuses on
-                  community-based adaptation to climate change. She is cofounder of
-                  Young People for Action on Climate Change, Jamaica and of GirlsCARE
-                  Jamaica, Caribbean Advisor for the NextGen Climate Board,
-                  Sustainability Lead for the JAWiC Board, and the Prime Minister's
-                  Youth Awardee for Environmental Protection (2019). She has been
-                  named one of "50 Next" youth advancing the future of food and has
-                  represented Jamaica as a youth climate champion in Paris, Poland,
-                  and Spain.
+                  Jhannel is a PhD candidate researching community-based
+                  adaptation to climate change, and cofounder of GirlsCARE
+                  Jamaica and Young People for Action on Climate Change, Jamaica.
                 </p>
+                <!-- Full CV moved into a no-JS accordion so the card stays skimmable. -->
+                <details class="coordinator-card__more">
+                  <summary>Read full bio</summary>
+                  <!-- DRAFT (sourced: brochure) — verify wording -->
+                  <p>
+                    She is Caribbean Advisor for the NextGen Climate Board,
+                    Sustainability Lead for the JAWiC Board, and the Prime
+                    Minister's Youth Awardee for Environmental Protection (2019).
+                    She has been named one of "50 Next" youth advancing the
+                    future of food and has represented Jamaica as a youth climate
+                    champion in Paris, Poland, and Spain.
+                  </p>
+                </details>
               </div>
             </article>
           </div>
@@ -224,7 +391,7 @@
       <section class="programs" id="programs" aria-labelledby="programs-title">
         <div class="section-shell">
           <div class="section-heading">
-            <p class="section-kicker">Programs</p>
+            <p class="section-kicker">Programmes</p>
             <!-- DRAFT-UNVERIFIED: programs headline -->
             <h2 id="programs-title">
               Programmes building climate resilience
@@ -238,11 +405,11 @@
 
           <div class="programs-grid">
             <article class="program-card program-card--feature">
-              <!-- DRAFT-UNVERIFIED: Mentorship image is a placeholder. Swap src for a real photo. -->
+              <!-- DRAFT image (from shared Drive: Westmoreland/_JRP7084.jpg) — provisional pick; swap if needed. -->
               <div class="program-card__image">
                 <img
-                  src="https://placehold.co/760x560/6a4ce0/ffffff?text=Mentorship"
-                  alt="Young women mentoring one another at a GirlsCARE climate session"
+                  src="assets/mentorship.jpg"
+                  alt="A GirlsCARE mentor in a branded polo talking with a young woman during a community climate visit"
                 />
               </div>
               <div class="program-card__body">
@@ -259,6 +426,13 @@
                   network-building sessions, report and reflection writing, and
                   virtual activism.
                 </p>
+                <!-- DRAFT-UNVERIFIED: featured outcome — swap for a verified metric/outcome -->
+                <p class="program-card__outcome">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>
+                  Leadership &amp; advocacy skills
+                </p>
+                <!-- DRAFT: link should point to a dedicated Mentorship page once built -->
+                <a class="program-card__more" href="#get-involved">Learn more <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
@@ -278,15 +452,22 @@
                   support women and girls — coordinating relief, care, and
                   recovery for the communities hit hardest.
                 </p>
+                <!-- DRAFT-UNVERIFIED: featured outcome — swap for a verified metric/outcome -->
+                <p class="program-card__outcome">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>
+                  Rapid community care
+                </p>
+                <!-- DRAFT: link should point to a dedicated Hurricane Relief page once built -->
+                <a class="program-card__more" href="#get-involved">Learn more <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
             <article class="program-card">
-              <!-- DRAFT-UNVERIFIED: image is a placeholder. Swap src for a real photo. -->
+              <!-- DRAFT image (from shared Drive: Instagram/"2 (1).png") — provisional pick; swap if needed. -->
               <div class="program-card__image">
                 <img
-                  src="https://placehold.co/760x560/ff6b5e/241019?text=Envisioning+Resilience"
-                  alt="Girls collaborating on a community climate-resilience project"
+                  src="assets/envisioning-resilience.jpg"
+                  alt="A GirlsCARE mentor and a young woman in conversation outdoors in a Caribbean community"
                 />
               </div>
               <div class="program-card__body">
@@ -298,15 +479,22 @@
                   futures for their communities through storytelling, research, and
                   reflection.
                 </p>
+                <!-- DRAFT-UNVERIFIED: featured outcome — swap for a verified metric/outcome -->
+                <p class="program-card__outcome">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>
+                  Youth-led climate futures
+                </p>
+                <!-- DRAFT: link should point to a dedicated Envisioning Resilience page once built -->
+                <a class="program-card__more" href="#get-involved">Learn more <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
             <article class="program-card">
-              <!-- DRAFT-UNVERIFIED: image is a placeholder. Swap src for a real photo. -->
+              <!-- DRAFT image (from shared Drive: Team/_JRP7238.jpg) — provisional pick; swap if needed. -->
               <div class="program-card__image">
                 <img
-                  src="https://placehold.co/760x560/16b6bd/241019?text=Care+Collective"
-                  alt="Members of the GirlsCARE care collective gathered together"
+                  src="assets/care-collective.jpg"
+                  alt="Four GirlsCARE members standing together and smiling in a Caribbean community"
                 />
               </div>
               <div class="program-card__body">
@@ -317,6 +505,13 @@
                   Our peer network connecting young women across the region for
                   solidarity, knowledge-sharing, and collective climate advocacy.
                 </p>
+                <!-- DRAFT-UNVERIFIED: featured outcome — swap for a verified metric/outcome -->
+                <p class="program-card__outcome">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>
+                  Regional solidarity network
+                </p>
+                <!-- DRAFT: link should point to a dedicated Care Collective page once built -->
+                <a class="program-card__more" href="#get-involved">Learn more <span aria-hidden="true">→</span></a>
               </div>
             </article>
           </div>
@@ -325,34 +520,64 @@
 
       <section
         class="community-note"
-        aria-label="Community voice"
+        aria-label="Participant testimonial"
       >
-        <div class="section-shell community-note__grid">
-          <div>
+        <div class="section-shell">
+          <figure class="testimonial">
             <!-- DRAFT-UNVERIFIED: voice label | original: [Insert Community Voice Label Here] -->
             <p class="section-kicker">In their words</p>
+            <svg class="testimonial__mark" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M13 8v7a7 7 0 0 1-7 7H4v-4h2a3 3 0 0 0 3-3H4V8h9Zm15 0v7a7 7 0 0 1-7 7h-2v-4h2a3 3 0 0 0 3-3h-5V8h9Z"/></svg>
             <blockquote>
               <!-- DRAFT-UNVERIFIED: replace with a real quote from a mentee/coordinator | original: [Insert Community Quote Or Impact Statement Here] -->
-              <p>When girls lead on climate, whole communities grow more resilient.</p>
+              <p>
+                GirlsCARE gave me the mentorship and the confidence to lead
+                climate action in my own community — and showed me I was never
+                doing it alone.
+              </p>
             </blockquote>
+            <figcaption class="testimonial__cite">
+              <!-- DRAFT-UNVERIFIED: attribution — swap for a real mentee/coordinator name, role &amp; place -->
+              <span class="testimonial__name">A GirlsCARE mentee</span>
+              <span class="testimonial__role">Climate mentorship programme · Jamaica</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Photo gallery — energy of the network. DRAFT: reuses existing site
+           photos as provisional picks; swap for dedicated gallery images. -->
+      <section class="gallery" aria-labelledby="gallery-title">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="section-kicker">In the field</p>
+            <!-- DRAFT-UNVERIFIED: gallery headline -->
+            <h2 id="gallery-title">The network in action</h2>
+            <!-- DRAFT-UNVERIFIED: gallery intro -->
+            <p>
+              Mentorship, advocacy, and community care across Jamaica and the
+              Caribbean — in the words of our members, in the field.
+            </p>
           </div>
-          <dl class="impact-list">
-            <div>
-              <!-- DRAFT (sourced): 5 mentorship pillars | original: [Insert Stat] / [Insert Stat Label Here] -->
-              <dt>5</dt>
-              <dd>Mentorship programme pillars</dd>
-            </div>
-            <div>
-              <!-- DRAFT-UNVERIFIED: example figure — replace with a real number -->
-              <dt>100+</dt>
-              <dd>Girls &amp; young women engaged</dd>
-            </div>
-            <div>
-              <!-- DRAFT-UNVERIFIED: example figure — replace with a real number -->
-              <dt>12+</dt>
-              <dd>Communities across Jamaica &amp; the region</dd>
-            </div>
-          </dl>
+          <ul class="gallery__grid">
+            <li class="gallery__item">
+              <img src="assets/about-girlscare-team.jpg" alt="GirlsCARE team members in branded polos standing together on a community road in Jamaica" loading="lazy" />
+            </li>
+            <li class="gallery__item">
+              <img src="assets/mentorship.jpg" alt="A GirlsCARE mentor talking with a young woman during a community climate visit" loading="lazy" />
+            </li>
+            <li class="gallery__item">
+              <img src="assets/care-collective.jpg" alt="Four GirlsCARE members standing together and smiling in a Caribbean community" loading="lazy" />
+            </li>
+            <li class="gallery__item">
+              <img src="assets/envisioning-resilience.jpg" alt="A GirlsCARE mentor and a young woman in conversation outdoors in a Caribbean community" loading="lazy" />
+            </li>
+            <li class="gallery__item">
+              <img src="assets/blog-mentorship.jpg" alt="Three young GirlsCARE members walking and talking together in a Caribbean community" loading="lazy" />
+            </li>
+            <li class="gallery__item">
+              <img src="assets/hurricane-relief.jpg" alt="Two women embrace amid hurricane debris during a GirlsCARE relief visit" loading="lazy" />
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -370,31 +595,146 @@
 
           <div class="journal-list" aria-label="Latest posts">
             <article class="journal-card">
-              <!-- DRAFT-UNVERIFIED: placeholder image + sample post — replace with real posts -->
+              <!-- DRAFT image (from shared Drive: Team/JIK_3920.jpg) — provisional pick. Sample post copy below is still DRAFT-UNVERIFIED. -->
               <img
-                src="https://placehold.co/540x360/e23171/ffffff?text=Blog+01"
-                alt="Placeholder image for a GirlsCARE blog post about the mentorship programme"
+                src="assets/blog-mentorship.jpg"
+                alt="Three young GirlsCARE members walking and talking together in a Caribbean community"
               />
               <div>
-                <!-- original: [Insert Category Or Date Here] / [Insert Featured Blog Post Title Here] -->
-                <p class="journal-card__meta">Mentorship</p>
+                <!-- DRAFT-UNVERIFIED: post meta — swap category/date/read time when real posts exist | original: [Insert Category Or Date Here] -->
+                <p class="journal-card__meta">
+                  <span class="journal-card__category">Mentorship</span>
+                  <span class="journal-card__date">Spring 2026</span>
+                  <span class="journal-card__read">5 min read</span>
+                </p>
+                <!-- original: [Insert Featured Blog Post Title Here] -->
                 <h3>Inside our young feminist climate mentorship programme</h3>
+                <!-- DRAFT-UNVERIFIED: excerpt -->
+                <p class="journal-card__excerpt">
+                  How mentorship, technical sessions, and virtual activism help
+                  young women lead climate action in their communities.
+                </p>
+                <!-- DRAFT-UNVERIFIED: author byline -->
+                <p class="journal-card__author">By the GirlsCARE team</p>
+                <!-- DRAFT: link should point to the published post -->
+                <a class="journal-card__link" href="#">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
 
             <article class="journal-card">
-              <!-- DRAFT-UNVERIFIED: placeholder image + sample post — replace with real posts -->
+              <!-- DRAFT image (from shared Drive: Team/_JRP7209.jpg) — provisional pick. Sample post copy below is still DRAFT-UNVERIFIED. -->
               <img
-                src="https://placehold.co/540x360/6a4ce0/ffffff?text=Blog+02"
-                alt="Placeholder image for a GirlsCARE blog post about Caribbean climate advocacy"
+                src="assets/blog-frontlines.jpg"
+                alt="A GirlsCARE member in a branded polo carrying a relief tote from a van after a hurricane"
               />
               <div>
-                <!-- original: [Insert Category Or Date Here] / [Insert Featured Blog Post Title Here] -->
-                <p class="journal-card__meta">Advocacy</p>
+                <!-- DRAFT-UNVERIFIED: post meta — swap category/date/read time when real posts exist | original: [Insert Category Or Date Here] -->
+                <p class="journal-card__meta">
+                  <span class="journal-card__category">Advocacy</span>
+                  <span class="journal-card__date">Spring 2026</span>
+                  <span class="journal-card__read">4 min read</span>
+                </p>
+                <!-- original: [Insert Featured Blog Post Title Here] -->
                 <h3>Young women on the frontlines of Caribbean climate action</h3>
+                <!-- DRAFT-UNVERIFIED: excerpt -->
+                <p class="journal-card__excerpt">
+                  Meet the young women coordinating relief and recovery when
+                  hurricanes hit — and shaping what comes next.
+                </p>
+                <!-- DRAFT-UNVERIFIED: author byline -->
+                <p class="journal-card__author">By the GirlsCARE team</p>
+                <!-- DRAFT: link should point to the published post -->
+                <a class="journal-card__link" href="#">Read more <span aria-hidden="true">→</span></a>
               </div>
             </article>
           </div>
+        </div>
+      </section>
+
+      <!-- Conversion hub — the target of the hero + announcement primary CTAs. -->
+      <section class="get-involved" id="get-involved" aria-labelledby="get-involved-title">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="section-kicker">Get Involved</p>
+            <!-- DRAFT-UNVERIFIED: section headline -->
+            <h2 id="get-involved-title">Join the movement</h2>
+            <!-- DRAFT-UNVERIFIED: section intro -->
+            <p>
+              There are many ways to stand with girls and young women leading
+              climate action across the Caribbean. Find the one that fits you.
+            </p>
+          </div>
+
+          <ul class="get-involved__grid">
+            <li class="get-involved__card get-involved__card--primary">
+              <span class="get-involved__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </span>
+              <h3>Join the network</h3>
+              <!-- DRAFT-UNVERIFIED: blurb + link target (swap for a real sign-up form) -->
+              <p>Become part of a regional network of girls and young women leading climate action.</p>
+              <a class="get-involved__link" href="#contact">Join the network <span aria-hidden="true">→</span></a>
+            </li>
+
+            <li class="get-involved__card">
+              <span class="get-involved__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.5-8.5C1 9.5 2.5 6 6 6c2 0 3.2 1.2 4 2.3C10.8 7.2 12 6 14 6c3.5 0 5 3.5 3.5 6.5C19 16.65 12 21 12 21Z"/></svg>
+              </span>
+              <h3>Volunteer</h3>
+              <!-- DRAFT-UNVERIFIED: blurb + link target -->
+              <p>Give your time and skills to programmes, events, and relief efforts.</p>
+              <a class="get-involved__link" href="#contact">Volunteer with us <span aria-hidden="true">→</span></a>
+            </li>
+
+            <li class="get-involved__card">
+              <span class="get-involved__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 8.4 9 10 5.2-1.6 9-5 9-10V6l-9-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+              </span>
+              <h3>Mentor</h3>
+              <!-- DRAFT-UNVERIFIED: blurb + link target -->
+              <p>Guide and support the next generation of young climate leaders.</p>
+              <a class="get-involved__link" href="#contact">Become a mentor <span aria-hidden="true">→</span></a>
+            </li>
+
+            <li class="get-involved__card">
+              <span class="get-involved__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17-5-5 2-2 3 3 1-1"/><path d="m13 7 5 5-2 2-3-3"/><path d="M3 12 1 14l4 4 2-2"/><path d="M21 12l2-2-4-4-2 2"/></svg>
+              </span>
+              <h3>Partner with us</h3>
+              <!-- DRAFT-UNVERIFIED: blurb + link target -->
+              <p>Collaborate with GirlsCARE as a funder, institution, or ally.</p>
+              <a class="get-involved__link" href="#contact">Explore partnership <span aria-hidden="true">→</span></a>
+            </li>
+
+            <li class="get-involved__card">
+              <span class="get-involved__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7"/><path d="M12 8S10.5 3 8 3a2.5 2.5 0 0 0 0 5Z"/><path d="M12 8s1.5-5 4-5a2.5 2.5 0 0 1 0 5Z"/></svg>
+              </span>
+              <h3>Donate</h3>
+              <!-- DRAFT-UNVERIFIED: blurb + link target (swap for a real donation link) -->
+              <p>Fund mentorship, relief, and resilience work across the region.</p>
+              <a class="get-involved__link" href="#contact">Support our work <span aria-hidden="true">→</span></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Trust strip. FRIDA is the only partner confirmed (transcript: GirlsCARE funder).
+           All other slots are placeholders — do NOT assert partnerships until verified. -->
+      <section class="partners" aria-labelledby="partners-title">
+        <div class="section-shell">
+          <p class="partners__eyebrow" id="partners-title">Partners &amp; funders</p>
+          <ul class="partners__logos">
+            <!-- CONFIRMED (transcript): FRIDA is a GirlsCARE funder. Swap text for the real logo. -->
+            <li class="partners__logo"><span>FRIDA — The Young Feminist Fund</span></li>
+            <!-- DRAFT-UNVERIFIED: replace each slot with a real, confirmed partner logo -->
+            <li class="partners__logo partners__logo--empty"><span>[Partner logo]</span></li>
+            <li class="partners__logo partners__logo--empty"><span>[Partner logo]</span></li>
+            <li class="partners__logo partners__logo--empty"><span>[Partner logo]</span></li>
+            <li class="partners__logo partners__logo--empty"><span>[Partner logo]</span></li>
+          </ul>
+          <!-- DRAFT-UNVERIFIED: confirm the full partner/funder list before publishing -->
+          <p class="partners__note">Add confirmed partner and funder logos here.</p>
         </div>
       </section>
     </main>
@@ -415,7 +755,36 @@
             across Jamaica and the Caribbean to lead on climate adaptation and
             resilience.
           </p>
+
+          <!-- DRAFT: wire this form up to a real email provider (e.g. Mailchimp) -->
+          <form class="footer-newsletter" action="#" method="post" aria-labelledby="newsletter-heading">
+            <span class="footer-newsletter__heading" id="newsletter-heading">Get updates from GirlsCARE</span>
+            <div class="footer-newsletter__row">
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input
+                id="newsletter-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Your email address"
+                required
+              />
+              <button type="submit">Subscribe</button>
+            </div>
+          </form>
         </div>
+
+        <nav class="footer-nav" aria-label="Footer">
+          <strong>Explore</strong>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#programs">Programmes</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#get-involved">Get involved</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
 
         <address>
           <strong>Contact</strong>
@@ -427,15 +796,15 @@
           <a href="tel:[InsertPhoneHere]">[Insert Phone Number Here]</a>
         </address>
 
-        <div>
-          <strong>Social</strong>
+        <div class="footer-social">
+          <strong>Follow</strong>
           <ul class="social-links" aria-label="Social media links">
             <!-- DRAFT (sourced): real Instagram handle @girlscareja -->
-            <li><a href="https://www.instagram.com/girlscareja/" aria-label="GirlsCARE on Instagram">IG</a></li>
+            <li><a href="https://www.instagram.com/girlscareja/" aria-label="GirlsCARE on Instagram">Instagram</a></li>
             <!-- DRAFT-UNVERIFIED: add real Facebook URL | original: [Insert Facebook URL Here] -->
-            <li><a href="#" aria-label="[Insert Facebook URL Here]">FB</a></li>
+            <li><a href="#" aria-label="GirlsCARE on Facebook (add URL)">Facebook</a></li>
             <!-- DRAFT-UNVERIFIED: add real LinkedIn URL | original: [Insert LinkedIn URL Here] -->
-            <li><a href="#" aria-label="[Insert LinkedIn URL Here]">IN</a></li>
+            <li><a href="#" aria-label="GirlsCARE on LinkedIn (add URL)">LinkedIn</a></li>
           </ul>
         </div>
       </div>
@@ -443,6 +812,10 @@
       <div class="footer-bottom">
         <!-- DRAFT: copyright | original: [Insert Copyright Text Here] -->
         <p>&copy; 2026 GirlsCARE. All rights reserved.</p>
+        <ul class="footer-legal" aria-label="Legal">
+          <!-- DRAFT-UNVERIFIED: link to a real privacy policy page when available -->
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
       </div>
     </footer>
   </body>
