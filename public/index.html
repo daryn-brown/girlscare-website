@@ -38,7 +38,7 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="styles.css?v=12" />
+    <link rel="stylesheet" href="styles.css?v=13" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -55,7 +55,14 @@
           />
         </a>
 
-        <ul class="nav-links">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="visually-hidden">Open main menu</span>
+          <span class="nav-toggle__icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+
+        <ul class="nav-links" id="primary-navigation">
           <li><a href="index.html#home" data-nav-section="home" aria-current="page">Home</a></li>
           <li><a href="index.html#about" data-nav-section="about">About</a></li>
           <li><a href="impact.html">Impact</a></li>
@@ -936,6 +943,6 @@
         <p>&copy; 2026 GirlsCARE. All rights reserved.</p>
       </div>
     </footer>
-    <script src="site.js?v=3"></script>
+    <script src="site.js?v=4"></script>
   </body>
 </html>
