@@ -1294,68 +1294,51 @@ main [id] {
   min-height: 18rem;
 }
 
-.program-visual {
+.program-photo {
   position: relative;
   isolation: isolate;
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  gap: 0.8rem;
-  padding: clamp(2rem, 5vw, 4.5rem);
+  margin: 0;
   overflow: hidden;
-  text-align: center;
+  background: var(--ink);
 }
 
-.program-visual::before,
-.program-visual::after {
+.program-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.program-card:hover .program-photo img,
+.impact-program:hover .program-photo img {
+  transform: scale(1.025);
+}
+
+.program-photo::after {
   content: "";
   position: absolute;
-  z-index: -1;
-  border: 0.15rem solid currentColor;
-  border-radius: 50%;
-  opacity: 0.18;
+  z-index: 0;
+  inset: 30% 0 0;
+  background: linear-gradient(transparent, rgba(36, 16, 25, 0.88));
+  pointer-events: none;
 }
 
-.program-visual::before {
-  width: 14rem;
-  height: 14rem;
-  left: -5rem;
-  top: -6rem;
-}
-
-.program-visual::after {
-  width: 19rem;
-  height: 19rem;
-  right: -8rem;
-  bottom: -10rem;
-}
-
-.program-visual--mentorship {
-  background: linear-gradient(145deg, var(--magenta), var(--purple-deep));
+.program-photo figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  gap: 0.5rem;
+  padding: clamp(1.3rem, 3vw, 2.4rem);
   color: var(--white);
+  text-shadow: 0 0.12rem 0.5rem rgba(36, 16, 25, 0.5);
 }
 
-.program-visual--relief {
-  background: linear-gradient(145deg, var(--yellow), var(--coral));
-  color: var(--ink);
-}
-
-.program-visual--resilience {
-  background: linear-gradient(145deg, #7ee2db, var(--teal));
-  color: var(--ink);
-}
-
-.program-visual--collective {
-  background: linear-gradient(145deg, var(--purple), var(--purple-deep));
-  color: var(--white);
-}
-
-.program-visual__icon {
-  width: clamp(4.75rem, 9vw, 7rem);
-  height: auto;
-}
-
-.program-visual__eyebrow {
+.program-photo figcaption span {
   font-family: var(--font-display);
   font-size: 0.78rem;
   font-weight: 800;
@@ -1363,14 +1346,34 @@ main [id] {
   text-transform: uppercase;
 }
 
-.program-visual strong {
-  max-width: 14ch;
+.program-photo figcaption strong {
+  max-width: 15ch;
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4.2vw, 4rem);
+  font-size: clamp(1.9rem, 3.6vw, 3.7rem);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 0.98;
   text-transform: uppercase;
+}
+
+.program-card:not(.program-card--feature) .program-photo figcaption strong {
+  font-size: clamp(1.7rem, 2.5vw, 2.5rem);
+}
+
+.program-photo--mentorship img {
+  object-position: center 45%;
+}
+
+.program-photo--relief img {
+  object-position: center;
+}
+
+.program-photo--resilience img {
+  object-position: 56% center;
+}
+
+.program-photo--collective img {
+  object-position: center;
 }
 
 .program-card__body {
@@ -2120,7 +2123,7 @@ main [id] {
   min-height: 100%;
 }
 
-.impact-program__visual.program-visual {
+.impact-program__visual.program-photo {
   min-height: 28rem;
 }
 
@@ -3319,7 +3322,7 @@ main [id] {
   .program-card__visual,
   .program-card--feature .program-card__visual,
   .program-card:not(.program-card--feature) .program-card__visual,
-  .impact-program__visual.program-visual {
+  .impact-program__visual.program-photo {
     min-height: 17rem;
   }
 
