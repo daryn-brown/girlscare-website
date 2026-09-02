@@ -2743,6 +2743,16 @@ main [id] {
   color: var(--ink-soft);
 }
 
+.pathway__status .hero__actions {
+  margin-top: 1rem;
+}
+
+.pathway__status .button {
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+}
+
 .journey-cta {
   padding-block: clamp(3.5rem, 7vw, 6rem);
   background: var(--teal-pale);
@@ -2909,6 +2919,23 @@ main [id] {
   margin: 0;
   color: rgba(255, 255, 255, 0.88);
   font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+}
+
+.giving-status .hero__actions {
+  margin-top: 1.5rem;
+}
+
+.giving-status .button--primary {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--ink);
+}
+
+.giving-status .button--primary:hover,
+.giving-status .button--primary:focus-visible {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--ink);
 }
 
 .giving-status__note {
