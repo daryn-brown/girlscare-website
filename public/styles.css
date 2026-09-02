@@ -1448,6 +1448,10 @@ main [id] {
   object-position: center 45%;
 }
 
+.program-photo--homepage-mentorship img {
+  object-position: center top;
+}
+
 .program-photo--relief img {
   object-position: center;
 }
