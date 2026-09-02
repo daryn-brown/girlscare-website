@@ -3,6 +3,15 @@
    Bold, colourful, community-centred, and grounded in GirlsCARE's own identity.
    ========================================================================== */
 
+/* Londrina Solid Black by Marcelo Magalhaes, licensed under the SIL OFL 1.1. */
+@font-face {
+  font-family: "GirlsCARE Display";
+  src: url("assets/fonts/londrina-solid-black.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Brand colour blocks */
   --magenta: #e23171;
@@ -34,7 +43,7 @@
   --radius-pill: 2.5rem;
 
   /* Type */
-  --font-heading: "Lilita One", "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "GirlsCARE Display", "Jost", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Jost", "Futura", ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", sans-serif;
   --font-body: "Jost", ui-sans-serif, system-ui, -apple-system,
