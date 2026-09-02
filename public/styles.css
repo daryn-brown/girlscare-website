@@ -2276,7 +2276,7 @@ main [id] {
   border-radius: 0.9rem;
 }
 
-.mentorship-journey span {
+.mentorship-journey__number {
   display: grid;
   place-items: center;
   width: 2rem;
