@@ -662,6 +662,12 @@ main [id] {
   box-shadow: var(--shadow-card);
 }
 
+.hero__visual--landscape img {
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  object-position: center;
+}
+
 .hero__visual figcaption {
   max-width: 30rem;
   padding: 0.65rem 0.95rem;
