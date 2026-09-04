@@ -1289,25 +1289,21 @@ main [id] {
   background: var(--teal);
 }
 
-.core-team__monogram {
-  display: grid;
-  place-items: center;
+.core-team__portrait {
   width: clamp(4.5rem, 8vw, 6.5rem);
   aspect-ratio: 1;
-  background: var(--magenta);
+  object-fit: cover;
+  border: 0.3rem solid var(--magenta);
   border-radius: 50%;
-  color: var(--white);
-  font-family: var(--font-heading);
-  font-size: clamp(2.1rem, 4vw, 3.5rem);
-  line-height: 1;
+  box-shadow: var(--shadow-soft);
 }
 
-.core-team__member:nth-child(2) .core-team__monogram {
-  background: var(--purple);
+.core-team__member:nth-child(2) .core-team__portrait {
+  border-color: var(--purple);
 }
 
-.core-team__member:nth-child(3) .core-team__monogram {
-  background: var(--magenta-deep);
+.core-team__member:nth-child(3) .core-team__portrait {
+  border-color: var(--magenta-deep);
 }
 
 .core-team__member h3 {
