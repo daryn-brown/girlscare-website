@@ -37,7 +37,6 @@
     mainMenuToggle.setAttribute("aria-expanded", String(shouldOpen));
     header.classList.toggle("is-menu-open", shouldOpen);
     header.classList.remove("is-hidden");
-    document.documentElement.classList.toggle("mobile-nav-open", shouldOpen);
 
     const label = mainMenuToggle.querySelector(".visually-hidden");
     if (label) {

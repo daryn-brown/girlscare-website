@@ -3379,11 +3379,6 @@ main [id] {
     will-change: transform;
   }
 
-  html.mobile-nav-open,
-  html.mobile-nav-open body {
-    overflow: hidden;
-  }
-
   .site-header.is-hidden {
     transform: translateY(calc(-100% - 0.1rem));
   }
@@ -3433,6 +3428,8 @@ main [id] {
     max-height: calc(100dvh - 5.5rem);
     padding-block: 0.55rem 0.25rem;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
