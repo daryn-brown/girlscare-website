@@ -3630,6 +3630,7 @@ main [id] {
   }
 
   .knowledge-story img {
+    height: auto;
     min-height: 0;
     aspect-ratio: 4 / 3;
   }
