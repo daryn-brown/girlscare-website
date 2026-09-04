@@ -1808,21 +1808,10 @@ main [id] {
 
 .gallery__item {
   margin: 0;
-  overflow: hidden;
-  border-radius: var(--radius);
 }
 
 .gallery__item img {
-  display: block;
-  width: 100%;
-  height: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.gallery__item:hover img {
-  transform: scale(1.04);
 }
 
 /* Partners / funders trust strip */
@@ -2354,7 +2343,7 @@ main [id] {
   list-style: none;
 }
 
-.impact-region__story {
+.photo-story {
   position: relative;
   height: 100%;
   margin: 0;
@@ -2363,11 +2352,10 @@ main [id] {
   border-radius: var(--radius);
 }
 
-.impact-region__story img {
+.photo-story img {
   display: block;
   width: 100%;
   height: 100%;
-  aspect-ratio: 3 / 2;
   object-fit: cover;
   opacity: 0.5;
   transition:
@@ -2375,7 +2363,11 @@ main [id] {
     transform 420ms ease;
 }
 
-.impact-region__story figcaption {
+.impact-region__story img {
+  aspect-ratio: 3 / 2;
+}
+
+.photo-story figcaption {
   position: absolute;
   inset: 0;
   display: flex;
@@ -2395,41 +2387,41 @@ main [id] {
     transform 240ms ease;
 }
 
-.impact-region__story figcaption strong {
+.photo-story figcaption strong {
   font-family: var(--font-display);
   font-size: clamp(1.3rem, 2.2vw, 2rem);
   line-height: 1;
 }
 
-.impact-region__story figcaption span {
+.photo-story figcaption span {
   max-width: 34ch;
   font-size: clamp(0.82rem, 1.1vw, 1rem);
   line-height: 1.4;
 }
 
-.impact-region__story:focus-visible {
+.photo-story:focus-visible {
   outline: 0.2rem solid var(--yellow);
   outline-offset: 0.25rem;
 }
 
 @media (hover: hover) {
-  .impact-region__story img {
+  .photo-story img {
     opacity: 1;
   }
 
-  .impact-region__story figcaption {
+  .photo-story figcaption {
     opacity: 0;
     transform: translateY(0.65rem);
   }
 
-  .impact-region__story:hover img,
-  .impact-region__story:focus-visible img {
+  .photo-story:hover img,
+  .photo-story:focus-visible img {
     opacity: 0.32;
     transform: scale(1.025);
   }
 
-  .impact-region__story:hover figcaption,
-  .impact-region__story:focus-visible figcaption {
+  .photo-story:hover figcaption,
+  .photo-story:focus-visible figcaption {
     opacity: 1;
     transform: translateY(0);
   }
@@ -3601,6 +3593,10 @@ main [id] {
   }
 
   .impact-region__gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__grid {
     grid-template-columns: 1fr;
   }
 
