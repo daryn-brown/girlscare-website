@@ -1291,6 +1291,7 @@ main [id] {
 
 .core-team__portrait {
   width: clamp(4.5rem, 8vw, 6.5rem);
+  height: clamp(4.5rem, 8vw, 6.5rem);
   aspect-ratio: 1;
   object-fit: cover;
   border: 0.3rem solid var(--magenta);
