@@ -180,6 +180,47 @@
     });
   }
 
+  const photoStories = [...document.querySelectorAll(".photo-story")];
+
+  if (photoStories.length) {
+    const tapCaptionInput = window.matchMedia(
+      "(hover: none), (pointer: coarse)",
+    );
+    const closePhotoCaptions = (except) => {
+      photoStories.forEach((story) => {
+        if (story !== except) {
+          story.classList.remove("is-caption-visible");
+        }
+      });
+    };
+
+    photoStories.forEach((story) => {
+      story.addEventListener("click", (event) => {
+        if (!tapCaptionInput.matches && event.pointerType !== "touch") {
+          return;
+        }
+
+        const shouldShow = !story.classList.contains("is-caption-visible");
+        closePhotoCaptions(story);
+        story.classList.toggle("is-caption-visible", shouldShow);
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      const clickedStory =
+        event.target instanceof Element &&
+        event.target.closest(".photo-story");
+
+      if (!clickedStory) {
+        closePhotoCaptions();
+      }
+    });
+
+    tapCaptionInput.addEventListener("change", () => {
+      closePhotoCaptions();
+    });
+  }
+
   const sectionLinks = [...nav.querySelectorAll("[data-nav-section]")];
   const sectionEntries = sectionLinks
     .map((link) => ({

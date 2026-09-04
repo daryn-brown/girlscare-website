@@ -2357,7 +2357,7 @@ main [id] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 1;
   transition:
     opacity 240ms ease,
     transform 420ms ease;
@@ -2381,7 +2381,9 @@ main [id] {
     rgba(35, 24, 43, 0.92) 100%
   );
   color: var(--white);
+  opacity: 0;
   pointer-events: none;
+  transform: translateY(0.65rem);
   transition:
     opacity 240ms ease,
     transform 240ms ease;
@@ -2404,26 +2406,33 @@ main [id] {
   outline-offset: 0.25rem;
 }
 
+.photo-story.is-caption-visible img,
+.photo-story:focus-visible img {
+  opacity: 0.32;
+  transform: scale(1.025);
+}
+
+.photo-story.is-caption-visible figcaption,
+.photo-story:focus-visible figcaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (hover: hover) {
-  .photo-story img {
-    opacity: 1;
-  }
-
-  .photo-story figcaption {
-    opacity: 0;
-    transform: translateY(0.65rem);
-  }
-
-  .photo-story:hover img,
-  .photo-story:focus-visible img {
+  .photo-story:hover img {
     opacity: 0.32;
     transform: scale(1.025);
   }
 
-  .photo-story:hover figcaption,
-  .photo-story:focus-visible figcaption {
+  .photo-story:hover figcaption {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .photo-story {
+    cursor: pointer;
   }
 }
 
