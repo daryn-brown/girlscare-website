@@ -279,7 +279,12 @@
   background: linear-gradient(125deg, var(--purple-deep), var(--ink));
 }
 
-.page-hero--resilience .button--primary {
+.page-hero--recovery {
+  background: linear-gradient(125deg, var(--magenta-deep), var(--ink));
+}
+
+.page-hero--resilience .button--primary,
+.page-hero--recovery .button--primary {
   background: var(--yellow);
   border-color: var(--yellow);
   color: var(--ink);

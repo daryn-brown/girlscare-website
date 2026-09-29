@@ -13,7 +13,8 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory public
 Open `http://127.0.0.1:4173/`. The dedicated Mentorship page is at
 `http://127.0.0.1:4173/programmes/mentorship.html`; About is at
 `http://127.0.0.1:4173/about.html`. Envisioning Resilience is at
-`http://127.0.0.1:4173/programmes/envisioning-resilience.html`.
+`http://127.0.0.1:4173/programmes/envisioning-resilience.html`, and Lend a Girl a
+Hand is at `http://127.0.0.1:4173/programmes/lend-a-girl-a-hand.html`.
 
 ## About and organisational identity
 
@@ -35,9 +36,8 @@ feminist-led climate justice identity.
 
 ## Programme pages
 
-`public/programmes/mentorship.html` and
-`public/programmes/envisioning-resilience.html` use the existing site header,
-navigation script, footer, and brand styles. Shared long-form programme styles live in
+The pages in `public/programmes/` use the existing site header, navigation
+script, footer, and brand styles. Shared long-form programme styles live in
 `public/programmes/programme.css`; assets use root-relative paths so direct
 navigation to the nested page works.
 
@@ -71,3 +71,19 @@ Lensational's photo-story collection and programme overview, Climate Home News'
 The latter is labelled as background on the wider initiative, not evidence of
 GirlsCARE's Jamaica results. Resource links return to the relevant programme;
 original photographs and articles remain with their publishers.
+
+Lend a Girl a Hand is the broader programme; hurricane relief is one part of it,
+as confirmed during the feature review. The programme menu still has four
+entries. All former relief entry links now lead to
+`public/programmes/lend-a-girl-a-hand.html`, while the existing
+`impact.html#hurricane-relief` summary remains available for older links.
+The new programme page also supports a direct `#hurricane-relief` section link.
+
+The Westmoreland Hurricane Relief Project and Back to School Support Initiative
+use the programme attribution and 2026 captions already present in the site.
+Wider farming, livelihood, and parish/community context is explicitly identified
+as organisation-wide GirlsCARE work, not an exclusive Lend a Girl a Hand reach
+claim. No beneficiary totals, specific aid packages, recruitment windows,
+clinical services, or new funding amounts are inferred. Support actions use the
+existing enquiry routes and retain the distinction between donation interest
+and taking payment.
