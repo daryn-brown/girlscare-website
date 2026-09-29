@@ -236,7 +236,7 @@
   const updateCurrentSection = (activeSection) => {
     sectionEntries.forEach(({ link, section }) => {
       if (section === activeSection) {
-        link.setAttribute("aria-current", "page");
+        link.setAttribute("aria-current", section.id === "home" ? "page" : "location");
       } else {
         link.removeAttribute("aria-current");
       }

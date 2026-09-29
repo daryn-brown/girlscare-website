@@ -14,6 +14,12 @@
         ]
       },
       {
+        "source": "**/*.@(xml|txt)",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+        ]
+      },
+      {
         "source": "**/*.@(css|js)",
         "headers": [
           { "key": "Cache-Control", "value": "public, max-age=604800" }

@@ -52,7 +52,7 @@ server to resolve consistently.
 | [Get Involved](public/get-involved.html) | `/get-involved.html` | Network, volunteer, mentor, and partnership pathways with Google Forms loaded on request inside the site. |
 | [Support Our Work](public/support.html) | `/support.html` | Qualitative funding/in-kind priorities and an on-site donation-interest form. It does not process payments. |
 | [Privacy and Enquiries](public/privacy.html) | `/privacy.html` | Form-provider information, submission boundaries, minimisation guidance, and the existing contact channel for questions. |
-| [Not found](public/404.html) | Unmatched Hosting URLs | The not-found response used by Firebase Hosting. |
+| [Not found](public/404.html) | Unmatched Hosting URLs | Branded recovery links with root-relative assets that work at nested missing paths; excluded from indexing. |
 
 ### Visitor experience
 
@@ -194,6 +194,31 @@ response access, retention, correction, and deletion to GirlsCARE. Account
 permissions, notification settings, safeguarding/consent arrangements, and
 formal privacy requirements remain the organisation's responsibility.
 
+### Homepage and launch assets
+
+The homepage connects the completed sections through a featured GirlsCARE at 5
+report, a broad Get Involved entry point, the four programme pages, scoped
+impact snapshots, the approved participant story, real Knowledge Hub resources,
+and support pathways. Its values preview points to the same feminist climate
+justice, collective care, and collective power described on About.
+
+The existing founder biographies were explicitly approved as worded on
+29 September 2026 and remain available through the homepage's native biography
+disclosures. The eight existing organisation listings were approved as
+text-only **partners, collaborators and supporters**. CLF is correctly identified
+as **Clara Lionel Foundation**, linked to its official website. No partner logos
+or identical funding-role claims have been added.
+
+`public/robots.txt` and `public/sitemap.xml` describe the eleven canonical content
+pages on the configured `girlscarejamaica.web.app` origin. The sitemap omits the
+404 page, fragment-only destinations, and invented modification dates. A small
+PNG site icon is derived from the existing GirlsCARE logo.
+
+The branded 404 page uses root-relative links and assets so it works for missing
+URLs at any depth. Homepage photos have intrinsic dimensions, with below-the-fold
+images loaded lazily. Page navigation distinguishes current pages from current
+locations within the homepage.
+
 ## Screenshots
 
 Captured from this repository's website on **29 September 2026**. Desktop
@@ -221,6 +246,10 @@ an earlier release until a separate Firebase deployment is approved and run.
 
 These screenshots show the entry pages, not private form responses. Embedded
 forms are loaded only after a visitor opens a panel.
+
+### Missing-page recovery
+
+![GirlsCARE's branded page-not-found screen with useful navigation](docs/screenshots/not-found-desktop.png)
 
 ### Programme pages
 
@@ -250,6 +279,7 @@ free of private form responses, account details, and browser overlays.
   README.md
   .firebaserc                 Firebase project alias
   firebase.json              Hosting root, exclusions, and cache headers
+  firebase.preview.json      Review-channel no-index and no-cache headers
   docs/
     screenshots/             Images used by this README
   public/
@@ -267,6 +297,8 @@ free of private form responses, account details, and browser overlays.
     enquiries.css             Participation, support, and privacy-page styles
     enquiries.js              On-demand Google Forms embeds
     404.html                  Hosting not-found page
+    robots.txt                Production crawl guidance and sitemap location
+    sitemap.xml               Canonical content-page URLs
     styles.css                Shared brand, layout, and responsive styles
     site.js                   Navigation and gallery enhancements
     programmes/
@@ -276,6 +308,7 @@ free of private form responses, account details, and browser overlays.
       care-collective.html
       programme.css          Shared long-form programme styles
     assets/
+      favicon.png            Small site icon derived from the GirlsCARE logo
       ...                    Organisation and programme imagery
       fonts/                 Local display font and its licence
 ```
@@ -349,6 +382,9 @@ text and use visible captions where activity context matters.
 The existing Q2 2026 Care Collective session, Treasure Beach retreat,
 Westmoreland relief project, Back to School activity, and Envisioning Resilience
 photographs retain their established programme/activity context.
+The historical filename `mentorship-network.jpg` depicts the 2026 Climate Mixer
+in Trinidad and Tobago; it belongs in that event's gallery context, not as an
+image of a mentorship cohort.
 
 The text-only Jamila Falak account was cleared for website publication during
 review on 29 September 2026. That approval does not automatically cover new
@@ -434,34 +470,42 @@ For local content/layout work, the Python server is sufficient. To exercise
 Hosting-specific behaviour such as the custom 404 and response headers:
 
 ```sh
-npx -y firebase-tools@latest emulators:start --only hosting --project girlscarejamaica
+npx -y firebase-tools@latest emulators:start --only hosting --project demo-girlscare --config firebase.json
 ```
 
 Use the local URL printed by the emulator. The simple Python server does not
 apply `firebase.json` response headers or Firebase's custom-404 behaviour.
+The demo project keeps these local checks separate from the configured cloud
+project. Use `--config firebase.preview.json` to inspect the review-channel
+headers instead.
 
 ### Deploy a review channel
 
 After content and asset permissions are cleared:
 
 ```sh
-npx -y firebase-tools@latest hosting:channel:deploy content-review --project girlscarejamaica --expires 7d
+npx -y firebase-tools@latest hosting:channel:deploy content-review --config firebase.preview.json --project girlscarejamaica --expires 7d
 ```
 
 This uploads the site and prints a temporary preview URL. Review that URL before
 publishing to the live channel. A preview URL is not a privacy boundary; never
 include confidential participant information or unapproved media.
+The separate preview configuration sends `X-Robots-Tag: noindex, nofollow` and
+revalidation headers on review responses. It does not change production
+indexing or make the preview private.
 
 ### Deploy the live site
 
 After explicit release approval:
 
 ```sh
-npx -y firebase-tools@latest deploy --only hosting --project girlscarejamaica
+npx -y firebase-tools@latest deploy --only hosting --config firebase.json --project girlscarejamaica
 ```
 
 Only `public/` is deployed. The README and its screenshots are repository
 documentation, not additional website assets.
+Deploy with the production configuration; do not promote a preview release
+whose configuration contains no-index headers directly to the live channel.
 
 Verify the live routes, navigation, forms, resource links, image loading, and
 sharing metadata after deployment. Keep the deployed commit reference and
@@ -475,6 +519,7 @@ deployment; reverting Git alone does not roll back the hosted site.
 | Resource | Cache policy |
 |---|---|
 | `.html` files | `no-cache, must-revalidate` |
+| `.xml` and `.txt` files, including sitemap and robots | `no-cache, must-revalidate` |
 | `.css` and `.js` files | Public caching for 7 days |
 | Matched image/icon and WOFF/WOFF2 files | Public caching for 30 days |
 
@@ -491,21 +536,22 @@ will automatically result in an acceptable upgrade.
 
 ## Content approval and remaining work
 
-The reviewed About and four programme pages are in place, alongside the
-guide-backed Impact and reach content. Other editorial and
-operational work remains; the repository should not be read as approval of
-every legacy claim or future service.
+The reviewed pages, resource library, enquiry flows, and homepage integration
+are in place. The existing founder biographies and eight text-only organisation
+listings have been approved. The following ongoing editorial and operational
+items should not be filled in by assumption.
 
 | Area | Outstanding review |
 |---|---|
 | Aggregate impact and additional testimonials | Organisation-wide totals still need verified periods, scope, sources, and counting methods. Published cohort snapshots are not cumulative totals. Additional participant stories or quotations need their own content and usage approval. |
 | Founding timeline | Reconcile the guide's 2021 founding date with its separate "Since 2020" reach wording. The new About page does not invent a reconciliation. |
-| Team profiles | Confirm current preferred names, roles, biographies, and affiliations. Existing coordinator profiles remain on Home. |
-| Partners and funders | Review names, relationship types, destinations, and listing/logo permissions. The legacy CLF listing still needs the approved Clara Lionel Foundation correction. |
+| Future team-profile changes | Obtain approved wording for updates, additional core-team roles, or advisory profiles rather than extrapolating from existing biographies. |
+| Organisation listings | Maintain approved names, destinations, and relationship wording. Obtain separate permission before adding logos or new organisations; check external links in a normal browser because some providers restrict automated access. |
 | Support costings | Published examples are qualitative. Confirm any future amounts, earmarking, or specific contribution commitments before adding them. |
 | Enquiry handling | Maintain response ownership, follow-up, account permissions, notification settings, privacy/consent arrangements, and retention. The website's provider-information page does not invent those operational policies. |
 | Knowledge Hub growth | Add further approved reports, blogs, mentee projects, poems, reflections, photo stories, videos, and research/advocacy resources as they become available. New media needs credits, permissions, and appropriate captions/transcripts; do not add empty collection promises. |
 | Future publishing and subscriptions | Choose ownership and operating requirements before adding a CMS, newsletter service, or payment integration. |
+| Custom domain and release | Retain the configured Hosting origin until an organisation-owned domain and DNS changes are explicitly approved. Source publication does not deploy Firebase. |
 
 These items should be resolved through the same feature-by-feature preview and
 approval process, rather than silently inventing facts, permissions, or service

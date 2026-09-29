@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://girlscarejamaica.web.app/sitemap.xml

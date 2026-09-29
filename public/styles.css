@@ -16,6 +16,7 @@
   /* Brand colour blocks */
   --magenta: #e23171;
   --magenta-deep: #c81e63;
+  --magenta-dark: #831640;
   --purple: #6a4ce0;
   --purple-deep: #4f33b8;
   --teal: #16b6bd;
@@ -75,6 +76,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -325,7 +327,8 @@ h3 {
   color: var(--magenta);
 }
 
-.nav-links a[aria-current="page"] {
+.nav-links a[aria-current="page"],
+.nav-links a[aria-current="location"] {
   color: var(--magenta-deep);
   text-decoration: underline;
   text-decoration-color: var(--yellow);
@@ -502,12 +505,12 @@ main [id] {
   grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.92fr);
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
-  padding: clamp(3.5rem, 7vw, 6.5rem) var(--page-gutter);
+  padding: clamp(3rem, 5vw, 4.5rem) var(--page-gutter);
   background: radial-gradient(
     120% 130% at 0% 0%,
-    var(--magenta) 0%,
-    var(--purple) 58%,
-    var(--purple-deep) 100%
+    var(--magenta-dark) 0%,
+    var(--purple-deep) 58%,
+    var(--ink) 100%
   );
   color: var(--white);
   overflow: hidden;
@@ -522,6 +525,7 @@ main [id] {
   height: 28rem;
   background: radial-gradient(circle, rgba(255, 201, 60, 0.5), transparent 65%);
   pointer-events: none;
+  opacity: 0.18;
 }
 
 .hero__copy {
@@ -536,8 +540,8 @@ main [id] {
 
 .hero h1 {
   color: var(--white);
-  font-size: clamp(3rem, 7vw, 6.6rem);
-  max-width: 14ch;
+  font-size: clamp(3rem, 5.4vw, 5.4rem);
+  max-width: 19ch;
 }
 
 .hero__copy > p:not(.section-kicker) {
@@ -618,8 +622,7 @@ main [id] {
   border-color: var(--yellow);
 }
 
-/* Hero secondary CTA is intentionally quiet — a text link, not a button,
-   so the single primary "Join the network" action clearly stands out. */
+/* Keep the secondary programme link visually quieter than the participation CTA. */
 .hero .button--secondary {
   min-height: 3.5rem;
   padding-inline: 0.35rem;
@@ -1708,6 +1711,11 @@ main [id] {
   aspect-ratio: 1.3;
   object-fit: cover;
   border-radius: 0.8rem;
+}
+
+.journal-card--resource {
+  grid-template-columns: minmax(0, 1fr);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 .journal-card > div {
@@ -3663,4 +3671,80 @@ main [id] {
   .site-header {
     position: static;
   }
+}
+
+.not-found-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: var(--paper);
+}
+
+.not-found-header {
+  padding-block: 1.25rem;
+}
+
+.not-found-main {
+  flex: 1;
+  padding-block: clamp(2rem, 6vw, 5rem);
+}
+
+.not-found-card {
+  max-width: 52rem;
+  margin-inline: auto;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  border-top: 0.4rem solid var(--magenta-deep);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.not-found-code {
+  margin: 0;
+  color: var(--purple-deep);
+  font-family: var(--font-heading);
+  font-size: clamp(5rem, 12vw, 8rem);
+  line-height: 1;
+}
+
+.not-found-card h1 {
+  margin: 1rem 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.not-found-card > p:not(.not-found-code) {
+  max-width: 58ch;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.not-found-card .button--primary {
+  background: var(--purple-deep);
+  border-color: var(--purple-deep);
+}
+
+.not-found-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.not-found-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--magenta-deep);
+  font-weight: 600;
+  text-underline-offset: 0.2em;
+}
+
+.not-found-footer {
+  padding-block: 1.5rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
 }
