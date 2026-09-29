@@ -47,8 +47,8 @@ server to resolve consistently.
 | [Lend a Girl a Hand](public/programmes/lend-a-girl-a-hand.html) | `/programmes/lend-a-girl-a-hand.html` | Practical support, hurricane relief, Back to School support, and connections to wider resilience work. |
 | [Envisioning Resilience](public/programmes/envisioning-resilience.html) | `/programmes/envisioning-resilience.html` | Photography, visual storytelling, women's lived experience, adaptation dialogue, and programme resources. |
 | [Care Collective](public/programmes/care-collective.html) | `/programmes/care-collective.html` | Collective care, sustainable leadership, shared sessions, retreat activity, and organisational wellbeing priorities. |
-| [Impact](public/impact.html) | `/impact.html` | Programme summaries, regional context, activity photographs, and reporting entry points. Some aggregate claims still require editorial review. |
-| [Knowledge Hub](public/knowledge-hub.html) | `/knowledge-hub.html` | Reports, programme background, press coverage, photo-story links, and previews of all four programmes. |
+| [Impact](public/impact.html) | `/impact.html` | Historical cohort snapshots, nine outcome themes, three milestones, participant-story links, compact programme summaries, and scoped regional context. |
+| [Knowledge Hub](public/knowledge-hub.html) | `/knowledge-hub.html` | Reports, programme background, press coverage, photo-story links, four programme previews, and Jamila Falak's participant story. |
 | [Get Involved](public/get-involved.html) | `/get-involved.html` | Network, volunteer, mentor, and partnership interest pathways using external Google Forms. |
 | [Support Our Work](public/support.html) | `/support.html` | Funding and in-kind support information and a donation-interest pathway. It does not process payments. |
 | [Not found](public/404.html) | Unmatched Hosting URLs | The not-found response used by Firebase Hosting. |
@@ -87,6 +87,29 @@ wellbeing as part of sustainable activism and leadership. Historical sessions
 and retreat examples do not establish a future schedule, open enrolment, or a
 clinical service.
 
+### Impact and evidence
+
+Home and Impact display **15** participants in the first mentorship cohort and
+**25** in a subsequent programme, explicitly labelled as historical snapshots.
+These figures are not added together or presented as unique-person totals.
+The **four programme areas** count matches the site's programme navigation.
+The guide does not supply precise years for those two cohort examples.
+
+Impact brings together all nine outcome themes and three milestones from the
+content guide. Qualitative outcomes and organisational priorities are not
+presented as measured percentage improvements or identical results for every
+participant.
+
+The full, approved Jamila Falak account has one canonical destination:
+`/knowledge-hub.html#jamila-falak`. Home, Impact, and Envisioning Resilience
+provide previews linking to it. The former placeholder homepage testimonial
+has been removed; no new participant quote or portrait is implied.
+
+Regional reach distinguishes historical Caribbean mentorship cohorts from
+Jamaican community activities. The map is regional context only and has no
+invented office or participant-location pin. Parish and country examples are
+not treated as a confirmed delivery footprint for every programme.
+
 ## Screenshots
 
 Captured from this repository's website on **29 September 2026**. Desktop
@@ -98,9 +121,11 @@ an earlier release until a separate Firebase deployment is approved and run.
 
 ### Organisation and resources
 
-| About GirlsCARE | Knowledge Hub programme previews |
+| About GirlsCARE | Impact and reach |
 |---|---|
-| ![About page with GirlsCARE's identity and founders](docs/screenshots/about-desktop.png) | ![Knowledge Hub previews for the four GirlsCARE programmes](docs/screenshots/knowledge-hub-programmes.png) |
+| ![About page with GirlsCARE's identity and founders](docs/screenshots/about-desktop.png) | ![GirlsCARE Impact page with participant outcomes and regional context](docs/screenshots/impact-desktop.png) |
+
+![Knowledge Hub previews for the four GirlsCARE programmes](docs/screenshots/knowledge-hub-programmes.png)
 
 ### Programme pages
 
@@ -136,7 +161,8 @@ free of private form responses, account details, and browser overlays.
     index.html               Homepage
     about.html               About GirlsCARE
     about.css                About-page styles
-    impact.html              Impact overview
+    impact.html              Outcomes, milestones, stories, and regional reach
+    impact.css               Impact, snapshot, and participant-story styles
     knowledge-hub.html        Resources and programme previews
     get-involved.html         Participation pathways
     support.html              Support and donation interest
@@ -172,7 +198,7 @@ justice identity and use the established programme names.
 | Programme description | Its dedicated page, the homepage card, the Impact summary, and any Knowledge Hub preview. |
 | Organisation identity | About, homepage introductory copy and metadata, and the site-wide footer description. |
 | Resource or publication | The canonical Knowledge Hub entry and the programme links pointing to it. |
-| Shared visual behaviour | `styles.css` and `site.js`; use `about.css` or `programmes/programme.css` for page-family-specific presentation. |
+| Shared visual behaviour | `styles.css` and `site.js`; use `about.css`, `impact.css`, or `programmes/programme.css` for page-family-specific presentation. |
 | Production domain | Canonical URLs, Open Graph URLs, social-image URLs, and the Hosting/domain configuration. |
 
 Keep page titles, descriptions, social-preview metadata, heading hierarchy,
@@ -359,13 +385,14 @@ will automatically result in an acceptable upgrade.
 
 ## Content approval and remaining work
 
-The reviewed About and four programme pages are in place. Other editorial and
+The reviewed About and four programme pages are in place, alongside the
+guide-backed Impact and reach content. Other editorial and
 operational work remains; the repository should not be read as approval of
 every legacy claim or future service.
 
 | Area | Outstanding review |
 |---|---|
-| Aggregate impact and testimonials | Some homepage/Impact counters and the older homepage testimonial remain marked `DRAFT-UNVERIFIED` in source. Confirm or replace them before a public content release. |
+| Aggregate impact and additional testimonials | Organisation-wide totals still need verified periods, scope, sources, and counting methods. Published cohort snapshots are not cumulative totals. Additional participant stories or quotations need their own content and usage approval. |
 | Founding timeline | Reconcile the guide's 2021 founding date with its separate "Since 2020" reach wording. The new About page does not invent a reconciliation. |
 | Team profiles | Confirm current preferred names, roles, biographies, and affiliations. Existing coordinator profiles remain on Home. |
 | Partners and funders | Review names, relationship types, destinations, and listing/logo permissions. The legacy CLF listing still needs the approved Clara Lionel Foundation correction. |

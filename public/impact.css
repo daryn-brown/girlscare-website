@@ -1,0 +1,318 @@
+.page-hero--impact {
+  background: linear-gradient(125deg, var(--purple-deep), var(--ink));
+}
+
+.page-hero--impact h1 {
+  max-width: 19ch;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+}
+
+.page-hero--impact .page-hero__visual img {
+  height: auto;
+  aspect-ratio: auto;
+}
+
+.page-hero--impact .button--primary {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--ink);
+}
+
+.page-hero--impact :focus-visible,
+.impact-page-cta :focus-visible {
+  outline-color: var(--yellow);
+}
+
+.impact-page-nav {
+  padding-block: 1rem;
+  background: var(--yellow-pale);
+  border-bottom: 0.06rem solid var(--line);
+}
+
+.impact-page-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin-block: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.impact-page-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.impact-page-nav a:hover,
+.impact-page-nav a:focus-visible {
+  background: var(--white);
+  color: var(--magenta-deep);
+}
+
+.impact-band--snapshots .impact-band__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.impact-snapshot-note {
+  max-width: 78ch;
+  margin: 1.5rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.impact-page-section {
+  padding-block: clamp(3.75rem, 6vw, 6rem);
+}
+
+.impact-page-section--tint {
+  background: var(--paper);
+}
+
+.impact-page-section--teal {
+  background: var(--teal-pale);
+}
+
+.impact-page-section h2,
+.impact-programmes h2,
+.impact-region--detail h2,
+.impact-page-cta h2 {
+  max-width: 22ch;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.3vw, 4.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.impact-section-heading {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.impact-section-heading > p:not(.section-kicker),
+.impact-story-copy > p:not(.impact-story-meta) {
+  max-width: 70ch;
+  margin: 1.25rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.impact-outcomes,
+.impact-milestones {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.impact-outcomes > li,
+.impact-milestones > li {
+  padding: clamp(1.4rem, 2.4vw, 2rem);
+  border-top: 0.3rem solid var(--magenta);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.impact-outcomes > li:nth-child(3n + 2),
+.impact-milestones > li:nth-child(2) {
+  border-top-color: var(--purple);
+}
+
+.impact-outcomes > li:nth-child(3n),
+.impact-milestones > li:nth-child(3) {
+  border-top-color: var(--teal);
+}
+
+.impact-milestones > li {
+  background: var(--white);
+}
+
+.impact-item-number {
+  color: var(--magenta-deep);
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.impact-outcomes h3,
+.impact-milestones h3 {
+  margin: 0.85rem 0 0.75rem;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  line-height: 1.3;
+}
+
+.impact-outcomes p,
+.impact-milestones p,
+.impact-reach-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.impact-milestones a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  margin-top: 1rem;
+  color: var(--magenta-deep);
+  font-weight: 600;
+  text-underline-offset: 0.2em;
+}
+
+.impact-section-note {
+  max-width: 78ch;
+  margin: 1.75rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.impact-story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.impact-story-meta {
+  margin: 1rem 0 0;
+  color: var(--magenta-deep);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.impact-story-copy > .impact-story-meta {
+  margin-top: 0;
+}
+
+.impact-story-detail .button--primary {
+  background: var(--magenta-deep);
+  border-color: var(--magenta-deep);
+}
+
+.impact-summary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.impact-summary-card,
+.impact-summary-card:nth-child(even) {
+  display: flex;
+  flex-direction: column;
+}
+
+.impact-summary-card .impact-program__visual.program-photo {
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+}
+
+.impact-summary-card:nth-child(even) .impact-program__visual {
+  order: 0;
+}
+
+.impact-summary-card .impact-program__body {
+  flex: 1;
+  align-content: start;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.impact-summary-card .impact-program__body h3 {
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+}
+
+.impact-map-note {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  background: var(--white);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.impact-reach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.impact-reach-card {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.impact-reach-card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.45rem;
+  line-height: 1.3;
+}
+
+.impact-reach-card h4 {
+  margin: 1.4rem 0 0.6rem;
+  color: var(--magenta-deep);
+  font-size: 0.9rem;
+}
+
+.impact-reach-card > .impact-section-note {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.impact-place-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--ink-soft);
+}
+
+.impact-page-cta h2 {
+  margin-inline: auto;
+}
+
+.impact-page-cta .section-kicker {
+  margin-top: 0;
+  color: var(--yellow);
+}
+
+@media (max-width: 60rem) {
+  .impact-outcomes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .impact-milestones,
+  .impact-story-grid,
+  .impact-reach-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 46rem) {
+  .impact-band--snapshots .impact-band__grid,
+  .impact-outcomes,
+  .impact-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-page-nav ul {
+    gap: 0.25rem;
+  }
+
+  .impact-page-nav a {
+    padding-inline: 0.65rem;
+    font-size: 0.95rem;
+  }
+}

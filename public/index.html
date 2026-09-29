@@ -4,20 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#e23171" />
-    <!--
-      ============================================================
-      CONTENT STATUS — please read
-      Draft copy below is sourced from the GirlsCARE brochure
-      (artofmarc.com/work/girlscare), the coordinators spread, and
-      general public context. It is NOT final.
-      • Every drafted value is wrapped/preceded by a comment tagged
-        "DRAFT" (sourced) or "DRAFT-UNVERIFIED" (best-guess), and
-        keeps the ORIGINAL [Insert ...] placeholder so you can find
-        and swap verified copy quickly (search the file for "DRAFT").
-      • Do not treat numbers, dates, contact details, or blog posts
-        as confirmed until verified with Rodrina.
-      ============================================================
-    -->
+    <!-- Remaining DRAFT annotations identify editorial review items.
+         Programme snapshots use the content guide, not cumulative reach totals.
+         See README.md for content approval and maintenance guidance. -->
     <meta
       name="description"
       content="GirlsCARE is a feminist-led climate justice organisation based in Jamaica, supporting girls and young women to advocate for climate-smart and gender-just solutions across the Caribbean."
@@ -67,6 +56,7 @@
       crossorigin
     />
     <link rel="stylesheet" href="styles.css?v=25" />
+    <link rel="stylesheet" href="impact.css?v=1" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -175,37 +165,33 @@
         </figure>
       </section>
 
-      <!-- Impact stats surfaced high on the page for immediate credibility. -->
-      <section class="impact-band" id="impact" aria-labelledby="impact-title">
+      <section class="impact-band impact-band--snapshots" id="impact" aria-labelledby="impact-title">
         <div class="section-shell">
           <div class="impact-band__head">
-            <p class="section-kicker">Our impact so far</p>
-            <h2 id="impact-title">The movement in numbers</h2>
+            <p class="section-kicker">Programme snapshots</p>
+            <h2 id="impact-title">People, programmes, and shared possibilities</h2>
           </div>
-          <dl class="impact-band__grid">
+          <dl class="impact-band__grid" aria-describedby="home-snapshot-note">
             <div>
-              <!-- DRAFT-UNVERIFIED: example figure — replace with a verified number -->
-              <dt>100+</dt>
-              <dd>Girls &amp; young women engaged</dd>
+              <dt>15</dt>
+              <dd>Young women in the first mentorship cohort</dd>
             </div>
             <div>
-              <!-- DRAFT-UNVERIFIED: example figure — replace with a verified number -->
-              <dt>12+</dt>
-              <dd>Communities across the region</dd>
+              <dt>25</dt>
+              <dd>Young women in a subsequent mentorship programme</dd>
             </div>
             <div>
-              <!-- DRAFT (stakeholder supplied): count reflects the organisations named in the August 2026 feedback. -->
-              <dt>8</dt>
-              <dd>Partners &amp; funders in our ecosystem</dd>
-            </div>
-            <div>
-              <!-- Verifiable from the programmes below; update if programmes change -->
               <dt>4</dt>
-              <dd>Programmes building resilience</dd>
+              <dd>Programme areas connecting leadership, resilience, and care</dd>
             </div>
           </dl>
+          <p class="impact-snapshot-note" id="home-snapshot-note">
+            The participation figures describe separate historical mentorship
+            cohorts, not a cumulative total. They should not be added together
+            as a count of unique people.
+          </p>
           <a class="impact-band__link" href="impact.html">
-            Explore the story behind the numbers <span aria-hidden="true">→</span>
+            Explore the wider impact <span aria-hidden="true">→</span>
           </a>
         </div>
       </section>
@@ -323,39 +309,38 @@
         </div>
       </section>
 
-      <!-- Regional reach — free OpenStreetMap embed (no API key). DRAFT: swap the
-           bounding box / marker and the location list for verified coverage. -->
       <section class="reach" id="reach" aria-labelledby="reach-title">
         <div class="section-shell reach__grid">
           <div class="reach__intro">
-            <p class="section-kicker">Where we work</p>
-            <!-- DRAFT-UNVERIFIED: reach headline -->
+            <p class="section-kicker">Regional connections</p>
             <h2 id="reach-title">Rooted in Jamaica, reaching across the Caribbean</h2>
-            <!-- DRAFT-UNVERIFIED: reach intro -->
             <p>
-              GirlsCARE is based in Jamaica and connects young women across the
-              wider Caribbean through mentorship, advocacy, and relief work.
+              Based in Jamaica, GirlsCARE connects participants and mentors
+              across the Caribbean through both virtual and in-person
+              activities. Different programmes have different communities
+              and regional connections.
             </p>
-            <!-- DRAFT-UNVERIFIED: confirm the real list of communities / countries reached -->
             <ul class="reach__list">
-              <li>Jamaica</li>
-              <li>Wider Caribbean region</li>
-              <li>Regional &amp; global youth networks</li>
+              <li>Caribbean mentorship cohorts</li>
+              <li>Community work in Jamaica</li>
+              <li>Online and in-person connections</li>
             </ul>
+            <a class="text-link" href="impact.html#regional-reach">Explore our regional reach</a>
           </div>
           <div class="reach__map">
             <iframe
-              title="Map of the Caribbean region where GirlsCARE works"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-85.0%2C9.0%2C-59.0%2C24.0&amp;layer=mapnik&amp;marker=18.11%2C-77.28"
+              title="Regional map of Jamaica and the Caribbean"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-90.0%2C0.0%2C-53.0%2C27.0&amp;layer=mapnik"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
-            <!-- DRAFT: link opens the same view on OpenStreetMap -->
+            <p class="impact-map-note">Regional context, not a map of service availability or individual participant locations.</p>
             <a
               class="reach__map-link"
-              href="https://www.openstreetmap.org/?mlat=18.11&amp;mlon=-77.28#map=6/17.5/-72.0"
+              href="https://www.openstreetmap.org/#map=4/14/-72"
               target="_blank"
               rel="noopener"
+              aria-label="View the regional map on OpenStreetMap (opens in a new tab)"
             >View larger map <span aria-hidden="true">→</span></a>
           </div>
         </div>
@@ -638,29 +623,22 @@
         </div>
       </section>
 
-      <section
-        class="community-note"
-        aria-label="Participant testimonial"
-      >
-        <div class="section-shell">
-          <figure class="testimonial">
-            <!-- DRAFT-UNVERIFIED: voice label | original: [Insert Community Voice Label Here] -->
-            <p class="section-kicker">In their words</p>
-            <svg class="testimonial__mark" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M13 8v7a7 7 0 0 1-7 7H4v-4h2a3 3 0 0 0 3-3H4V8h9Zm15 0v7a7 7 0 0 1-7 7h-2v-4h2a3 3 0 0 0 3-3h-5V8h9Z"/></svg>
-            <blockquote>
-              <!-- DRAFT-UNVERIFIED: replace with a real quote from a mentee/coordinator | original: [Insert Community Quote Or Impact Statement Here] -->
-              <p>
-                GirlsCARE gave me the mentorship and the confidence to lead
-                climate action in my own community — and showed me I was never
-                doing it alone.
-              </p>
-            </blockquote>
-            <figcaption class="testimonial__cite">
-              <!-- DRAFT-UNVERIFIED: attribution — swap for a real mentee/coordinator name, role &amp; place -->
-              <span class="testimonial__name">A GirlsCARE mentee</span>
-              <span class="testimonial__role">Climate mentorship programme · Jamaica</span>
-            </figcaption>
-          </figure>
+      <section class="impact-page-section impact-page-section--teal impact-story-preview" id="community-story" aria-labelledby="community-story-title">
+        <div class="section-shell impact-story-grid">
+          <div>
+            <p class="section-kicker">A participant's continuing journey</p>
+            <h2 id="community-story-title">Meet Jamila Falak</h2>
+          </div>
+          <div class="impact-story-copy">
+            <p class="impact-story-meta">Envisioning Resilience &middot; Jamaica</p>
+            <p>
+              Jamila developed photography and storytelling skills through
+              Envisioning Resilience. Her wider advocacy journey later
+              included a Climate Justice fellowship and a Chevening scholarship.
+            </p>
+            <a class="text-link" href="knowledge-hub.html#jamila-falak">Read Jamila's story</a>
+            <p><a href="impact.html#participant-stories">Explore the wider impact</a></p>
+          </div>
         </div>
       </section>
 
