@@ -1,107 +1,390 @@
-# GirlsCARE Website Prototype
+# GirlsCARE Website
 
-Static HTML, CSS, and JavaScript are served from `public/`.
+The website for **GirlsCARE**, a feminist-led climate justice organisation based
+in Jamaica, championing gender-responsive climate justice across the Caribbean.
+It introduces the organisation, its programmes, community stories, resources,
+and ways to get involved.
 
-## Local preview
+Built with **HTML, CSS, and vanilla JavaScript**, served directly from `public/`
+with **Firebase Hosting**. There is no application build step, package install,
+database, or custom backend required to run the site locally.
 
-From the repository root:
+![GirlsCARE homepage on desktop](docs/screenshots/home-desktop.png)
+
+[Quick start](#quick-start) |
+[Pages and features](#pages-and-features) |
+[Screenshots](#screenshots) |
+[Project structure](#project-structure) |
+[Content maintenance](#content-and-media-maintenance) |
+[Deployment](#firebase-hosting)
+
+## Quick start
+
+You need Git, Python 3, and a modern browser for local development.
 
 ```sh
+git clone https://github.com/daryn-brown/girlscare-website.git
+cd girlscare-website
 python3 -m http.server 4173 --bind 127.0.0.1 --directory public
 ```
 
-Open `http://127.0.0.1:4173/`. The dedicated Mentorship page is at
-`http://127.0.0.1:4173/programmes/mentorship.html`; About is at
-`http://127.0.0.1:4173/about.html`. Envisioning Resilience is at
-`http://127.0.0.1:4173/programmes/envisioning-resilience.html`, and Lend a Girl a
-Hand is at `http://127.0.0.1:4173/programmes/lend-a-girl-a-hand.html`.
-Care Collective is at `http://127.0.0.1:4173/programmes/care-collective.html`.
+Open **http://127.0.0.1:4173/**. Stop the server with `Ctrl+C`.
 
-## About and organisational identity
+Already have the repository? Run the server command from its root directory.
+Edit the HTML, CSS, or JavaScript and reload the browser; no compilation is needed.
 
-`public/about.html` contains the guide-backed identity, six grounding principles,
-five expanded values, eight approach principles, team introduction, and five
-current/emerging priorities. Its long-form layout is scoped in `public/about.css`
-and reuses the site's existing navigation, brand styles, and team components.
+Serve **`public/` as the web root**, rather than opening HTML with `file://`.
+Programme pages use root-relative asset and navigation paths, which need an HTTP
+server to resolve consistently.
 
-All header/footer About links lead to the dedicated page. The homepage keeps its
-About summary and the existing `#about`, `#coordinators`, and `#core-team` anchors.
-Existing coordinator biographies remain on the homepage; the About page uses
-the current team names and portraits without adding unconfirmed career details.
+## Pages and features
 
-The founding year remains unpublished on About until the guide's 2021 founding
-date and its separate "Since 2020" reach statement are reconciled. Expanded
-biographies and preferred published names still need the team's confirmation.
-The homepage introduction, metadata, and site-wide footer use the guide's
-feminist-led climate justice identity.
+| Page | Route | What it contains |
+|---|---|---|
+| [Home](public/index.html) | `/` | Organisation introduction, programme summaries, people, activity gallery, impact preview, and participation links. |
+| [About](public/about.html) | `/about.html` | Identity, six grounding principles, five expanded values, eight approach principles, team introductions, and five future priorities. |
+| [Mentorship](public/programmes/mentorship.html) | `/programmes/mentorship.html` | The flagship Young Women's Climate Justice Mentorship Programme, audience, approach, historical cohort context, outcomes, and resources. |
+| [Lend a Girl a Hand](public/programmes/lend-a-girl-a-hand.html) | `/programmes/lend-a-girl-a-hand.html` | Practical support, hurricane relief, Back to School support, and connections to wider resilience work. |
+| [Envisioning Resilience](public/programmes/envisioning-resilience.html) | `/programmes/envisioning-resilience.html` | Photography, visual storytelling, women's lived experience, adaptation dialogue, and programme resources. |
+| [Care Collective](public/programmes/care-collective.html) | `/programmes/care-collective.html` | Collective care, sustainable leadership, shared sessions, retreat activity, and organisational wellbeing priorities. |
+| [Impact](public/impact.html) | `/impact.html` | Programme summaries, regional context, activity photographs, and reporting entry points. Some aggregate claims still require editorial review. |
+| [Knowledge Hub](public/knowledge-hub.html) | `/knowledge-hub.html` | Reports, programme background, press coverage, photo-story links, and previews of all four programmes. |
+| [Get Involved](public/get-involved.html) | `/get-involved.html` | Network, volunteer, mentor, and partnership interest pathways using external Google Forms. |
+| [Support Our Work](public/support.html) | `/support.html` | Funding and in-kind support information and a donation-interest pathway. It does not process payments. |
+| [Not found](public/404.html) | Unmatched Hosting URLs | The not-found response used by Firebase Hosting. |
 
-## Programme pages
+### Visitor experience
 
-The pages in `public/programmes/` use the existing site header, navigation
-script, footer, and brand styles. Shared long-form programme styles live in
-`public/programmes/programme.css`; assets use root-relative paths so direct
-navigation to the nested page works.
+- All four programme menu entries open dedicated pages; shorter summaries remain
+  on Home and Impact.
+- Programme pages have in-page navigation, contextual activity photographs, and
+  links to related pages and Knowledge Hub resources.
+- The mobile menu supports touch and keyboard interaction. Desktop submenus
+  support disclosure buttons, arrow-key entry, and Escape.
+- Activity-gallery captions are available through hover/focus and touch
+  interaction. New programme photo sections keep captions visible.
+- Semantic headings, skip links, image alternatives, visible focus, responsive
+  layouts, and reduced-motion styles support accessibility.
+- Essential text and links are static HTML and remain available without
+  JavaScript. JavaScript enhances navigation, mobile-header behaviour, gallery
+  captions, and homepage section highlighting.
 
-Mentorship entry points in every page's programme menu, the homepage previews,
-the Impact summary, and the Knowledge Hub lead to the dedicated page. The
-existing `impact.html#mentorship` summary remains available for older links.
+### Programme distinctions
 
-Programme copy follows the GirlsCARE Website Content Guide. Cohort figures are
-historical snapshots, not cumulative totals or current application criteria.
-Related publications have canonical entries in the Knowledge Hub. New quotes,
-photos, eligibility rules, and aggregate figures require the appropriate
-content and usage approval before publication.
+**Mentorship** is the flagship. Its historical cohort snapshots are not
+cumulative reach totals or current application criteria.
 
-Envisioning Resilience entry points lead to its dedicated programme page; the
-existing `impact.html#envisioning-resilience` summary remains available. Its
-audience and outcomes are specific to the Jamaica photography/storytelling work,
-not inherited from Mentorship's cohorts or age range. Existing programme photos
-and their established activity captions are reused; no partner-owned photo
-essays, new portraits, or testimonials have been copied into the site.
+**Lend a Girl a Hand** is the broader programme; hurricane relief is one part of
+it, not a fifth programme. Back to School support is also represented. Wider
+farming, livelihood, and geographic context is labelled as GirlsCARE-wide work.
 
-The text-only Jamila Falak account follows the supplied content guide and was
-cleared for website publication during the feature review on 29 September 2026.
-New quotes or portraits still require appropriate permission; do not present
-later achievements as caused solely by the programme.
-Programme recruitment dates, current availability, and unconfirmed totals are
-not inferred from historical coverage.
+**Envisioning Resilience** describes the Jamaica photography and storytelling
+work with NAP Global Network and Lensational. Its resources distinguish the
+Jamaica programme from the earlier Ghana and Kenya pilots.
 
-The Knowledge Hub links to the NAP Global Network's Jamaica account,
-Lensational's photo-story collection and programme overview, Climate Home News'
-2026 Jamaica feature, and IISD's account of the earlier Ghana/Kenya pilots.
-The latter is labelled as background on the wider initiative, not evidence of
-GirlsCARE's Jamaica results. Resource links return to the relevant programme;
-original photographs and articles remain with their publishers.
+**Care Collective** presents emotional, psychological, social, and material
+wellbeing as part of sustainable activism and leadership. Historical sessions
+and retreat examples do not establish a future schedule, open enrolment, or a
+clinical service.
 
-Lend a Girl a Hand is the broader programme; hurricane relief is one part of it,
-as confirmed during the feature review. The programme menu still has four
-entries. All former relief entry links now lead to
-`public/programmes/lend-a-girl-a-hand.html`, while the existing
-`impact.html#hurricane-relief` summary remains available for older links.
-The new programme page also supports a direct `#hurricane-relief` section link.
+## Screenshots
 
-The Westmoreland Hurricane Relief Project and Back to School Support Initiative
-use the programme attribution and 2026 captions already present in the site.
-Wider farming, livelihood, and parish/community context is explicitly identified
-as organisation-wide GirlsCARE work, not an exclusive Lend a Girl a Hand reach
-claim. No beneficiary totals, specific aid packages, recruitment windows,
-clinical services, or new funding amounts are inferred. Support actions use the
-existing enquiry routes and retain the distinction between donation interest
-and taking payment.
+Captured from this repository's website on **29 September 2026**. Desktop
+page views use a 1280 x 900 viewport; mobile views use 390 x 1000. The Knowledge
+Hub image is a detail of its programme-preview grid.
 
-Care Collective has a dedicated page at `public/programmes/care-collective.html`.
-All four programme menu entries now lead to their own pages. The homepage and
-Impact previews, the Knowledge Hub, About values, and related programme copy
-link to Care Collective; `impact.html#care-collective` remains available.
-The Knowledge Hub's four programme previews use two columns on wide screens
-and a single column on narrower screens.
+These images document the repository version. The hosted website can reflect
+an earlier release until a separate Firebase deployment is approved and run.
 
-Care content follows the guide's description of emotional, psychological,
-social, and material wellbeing as part of sustainable activism and leadership.
-The Q2 2026 quarterly session and the Feminist Collective Care & 2026 Visioning
-Retreat in Treasure Beach reuse existing activity captions and photos. These
-historical examples do not establish a future schedule or open enrolment.
-No counselling, clinical treatment, crisis hotline, participant eligibility,
-or measured recovery outcomes are claimed. Broader psychosocial-support
-priorities are explicitly presented as organisation-wide GirlsCARE context.
-The enquiry actions use the existing network and partnership pathways.
+### Organisation and resources
+
+| About GirlsCARE | Knowledge Hub programme previews |
+|---|---|
+| ![About page with GirlsCARE's identity and founders](docs/screenshots/about-desktop.png) | ![Knowledge Hub previews for the four GirlsCARE programmes](docs/screenshots/knowledge-hub-programmes.png) |
+
+### Programme pages
+
+| Mentorship | Lend a Girl a Hand |
+|---|---|
+| ![Young Women's Climate Justice Mentorship Programme on desktop](docs/screenshots/mentorship-desktop.png) | ![Lend a Girl a Hand programme on desktop](docs/screenshots/lend-a-girl-a-hand-desktop.png) |
+
+| Envisioning Resilience | Care Collective |
+|---|---|
+| ![Envisioning Resilience photography and storytelling programme on desktop](docs/screenshots/envisioning-resilience-desktop.png) | ![Care Collective programme on desktop](docs/screenshots/care-collective-desktop.png) |
+
+### Mobile views
+
+| Home | Care Collective |
+|---|---|
+| ![GirlsCARE homepage at mobile width](docs/screenshots/home-mobile.png) | ![Care Collective page at mobile width](docs/screenshots/care-collective-mobile.png) |
+
+Screenshots live in [`docs/screenshots/`](docs/screenshots/), outside the
+deployed `public/` directory. Refresh them after approved visual changes, using
+the viewports above and waiting for fonts and images to load. Keep screenshots
+free of private form responses, account details, and browser overlays.
+
+## Project structure
+
+```text
+.
+  README.md
+  .firebaserc                 Firebase project alias
+  firebase.json              Hosting root, exclusions, and cache headers
+  docs/
+    screenshots/             Images used by this README
+  public/
+    index.html               Homepage
+    about.html               About GirlsCARE
+    about.css                About-page styles
+    impact.html              Impact overview
+    knowledge-hub.html        Resources and programme previews
+    get-involved.html         Participation pathways
+    support.html              Support and donation interest
+    404.html                  Hosting not-found page
+    styles.css                Shared brand, layout, and responsive styles
+    site.js                   Navigation and gallery enhancements
+    programmes/
+      mentorship.html
+      lend-a-girl-a-hand.html
+      envisioning-resilience.html
+      care-collective.html
+      programme.css          Shared long-form programme styles
+    assets/
+      ...                    Organisation and programme imagery
+      fonts/                 Local display font and its licence
+```
+
+The site has no client-side router. Each public page is a real HTML file, and
+Firebase serves those files directly. No blanket single-page-app rewrite is
+configured.
+
+## Content and media maintenance
+
+### Editing pages
+
+Use GirlsCARE's approved content guide and programme records as the editorial
+sources. Keep public copy consistent with the organisation's feminist-led climate
+justice identity and use the established programme names.
+
+| Change | Files to review together |
+|---|---|
+| Shared navigation or footer | Every public content page, including the nested programme pages. There is no generated shared-template layer. |
+| Programme description | Its dedicated page, the homepage card, the Impact summary, and any Knowledge Hub preview. |
+| Organisation identity | About, homepage introductory copy and metadata, and the site-wide footer description. |
+| Resource or publication | The canonical Knowledge Hub entry and the programme links pointing to it. |
+| Shared visual behaviour | `styles.css` and `site.js`; use `about.css` or `programmes/programme.css` for page-family-specific presentation. |
+| Production domain | Canonical URLs, Open Graph URLs, social-image URLs, and the Hosting/domain configuration. |
+
+Keep page titles, descriptions, social-preview metadata, heading hierarchy,
+captions, image alternatives, and call-to-action destinations aligned with the
+actual content. Do not imply that a programme is recruiting unless its current
+status and participation details are confirmed.
+
+### Preserve existing links
+
+The following historical anchors remain useful and should not be removed
+without an intentional compatibility plan:
+
+```text
+/index.html#home
+/index.html#about
+/index.html#programs
+/index.html#blog
+/index.html#coordinators
+/index.html#core-team
+/index.html#contact
+/impact.html#mentorship
+/impact.html#hurricane-relief
+/impact.html#envisioning-resilience
+/impact.html#care-collective
+```
+
+`/impact.html#lend-a-girl-a-hand` is also available, and the dedicated Lend a Girl
+a Hand page has its own `#hurricane-relief` section. The main programme menus
+should continue to link to the four dedicated pages rather than the shorter
+Impact summaries.
+
+URL fragments are handled by the browser, not sent to the server. A Hosting
+redirect alone cannot distinguish two anchors on the same HTML page.
+
+### Images, stories, and permissions
+
+Keep original files and permission records in the organisation's internal
+library. Put only approved, suitably sized web assets in `public/assets/`.
+Record programme/activity, year, photographer, rights holder, permitted uses,
+subject consent, caption, and alt text before publishing new material.
+
+Use images that actually represent the named programme. Preserve creator credits
+and watermarks, retain appropriate aspect ratios, and avoid crops that obscure
+important people or context. Give informative images meaningful alternative
+text and use visible captions where activity context matters.
+
+The existing Q2 2026 Care Collective session, Treasure Beach retreat,
+Westmoreland relief project, Back to School activity, and Envisioning Resilience
+photographs retain their established programme/activity context.
+
+The text-only Jamila Falak account was cleared for website publication during
+review on 29 September 2026. That approval does not automatically cover new
+portraits, quotations, or additional personal details. Do not present later
+achievements as caused solely by a programme.
+
+For reach statistics, retain the reporting period, scope, source, and counting
+method. Do not add cohort figures together without confirming whether they
+represent unique people or repeat programme places.
+
+## External integrations
+
+| Service | Current use | Maintenance considerations |
+|---|---|---|
+| Google Forms | Separate network, volunteer, mentor, partnership, and donation-interest destinations. | Confirm form ownership, availability, questions, response recipients, notifications, and privacy arrangements before changing a flow. The site currently links out; it does not host a submission backend. |
+| OpenStreetMap | Embedded regional maps on Home and Impact. | Keep the title and geographic framing accurate. Maps are contextual, not proof of programme reach at every marked location. |
+| Google Fonts | Jost body/interface typeface. | Requires an external font request; system-font fallbacks are defined. |
+| Local display font | Londrina Solid Black in `public/assets/fonts/`. | Preserve its included SIL Open Font License. |
+| Instagram | Existing public contact and update links. | Confirm the account and destination before changing contact details. |
+| Publisher websites | Impact report, press, programme background, and photo stories. | Link and attribute rather than assuming permission to republish complete articles or media. |
+
+The Knowledge Hub includes GirlsCARE at 5, Climate Tracker's mentorship feature,
+NAP Global Network's Jamaica account, Lensational resources, Climate Home News'
+2026 Jamaica feature, and IISD's Ghana/Kenya background account.
+
+**Donation interest is not payment processing.** No payment gateway, card
+collection, automated donation receipt, or tax-deductibility workflow is
+implemented. Newsletter subscription and self-service content publishing are
+not currently implemented either.
+
+## Validation and contribution workflow
+
+Work incrementally, preview each meaningful change, and obtain approval before
+committing and pushing it. `main` is the integration branch for reviewed work.
+Use descriptive names for any future feature branches.
+
+There is no package-manager build, lint command, or committed automated browser
+test runner. For a local review:
+
+```sh
+git diff --check
+python3 -m http.server 4173 --bind 127.0.0.1 --directory public
+```
+
+- Open each affected route directly and follow its navigation, resources,
+  programme cards, and footer links. Check existing anchors as well as new links.
+- Review desktop, tablet, and narrow mobile widths, including 320, 375, 768,
+  1024, and 1440 CSS pixels. Look for clipped text, image distortion, and
+  horizontal scrolling.
+- Exercise mobile menus after scrolling, keyboard focus, submenu controls,
+  Escape, skip links, gallery captions, and reduced-motion preferences.
+- Confirm essential information and links remain usable with JavaScript
+  disabled. Check the browser console and local asset requests for errors.
+- Check that externally hosted resources are the intended publications. Use
+  approved dummy data and coordinate with the response owner if testing a form;
+  do not submit unsolicited entries to live forms.
+- Review image/story permissions, dates, partner names, contact details,
+  metadata, and the content approval items below before a public release.
+
+## Firebase Hosting
+
+The configured project in [`.firebaserc`](.firebaserc) is
+**`girlscarejamaica`**. Its configured primary Hosting address is
+**https://girlscarejamaica.web.app/**.
+
+**Pushing to GitHub does not deploy the website.** No GitHub Actions deployment
+workflow is committed in this repository. Deployment is a separate, authorised
+operation.
+
+### Prerequisites
+
+Use a Node.js release supported by the current Firebase CLI, with `npx`
+available. Authenticate the Firebase CLI using an authorised account with
+access to the configured project. Do not commit credentials, service-account
+keys, or private environment files.
+
+For local content/layout work, the Python server is sufficient. To exercise
+Hosting-specific behaviour such as the custom 404 and response headers:
+
+```sh
+npx -y firebase-tools@latest emulators:start --only hosting --project girlscarejamaica
+```
+
+Use the local URL printed by the emulator. The simple Python server does not
+apply `firebase.json` response headers or Firebase's custom-404 behaviour.
+
+### Deploy a review channel
+
+After content and asset permissions are cleared:
+
+```sh
+npx -y firebase-tools@latest hosting:channel:deploy content-review --project girlscarejamaica --expires 7d
+```
+
+This uploads the site and prints a temporary preview URL. Review that URL before
+publishing to the live channel. A preview URL is not a privacy boundary; never
+include confidential participant information or unapproved media.
+
+### Deploy the live site
+
+After explicit release approval:
+
+```sh
+npx -y firebase-tools@latest deploy --only hosting --project girlscarejamaica
+```
+
+Only `public/` is deployed. The README and its screenshots are repository
+documentation, not additional website assets.
+
+Verify the live routes, navigation, forms, resource links, image loading, and
+sharing metadata after deployment. Keep the deployed commit reference and
+release details. Firebase Hosting's release history can restore a previous
+deployment; reverting Git alone does not roll back the hosted site.
+
+### Caching and domains
+
+[`firebase.json`](firebase.json) currently configures:
+
+| Resource | Cache policy |
+|---|---|
+| `.html` files | `no-cache, must-revalidate` |
+| `.css` and `.js` files | Public caching for 7 days |
+| Matched image/icon and WOFF/WOFF2 files | Public caching for 30 days |
+
+HTML references use versioned stylesheet/script query strings. Update the
+corresponding version on every consuming page when changing shared CSS or
+JavaScript. Use a new asset filename when replacing a cached image, and update
+any matching social-preview metadata.
+
+Custom-domain registration, hosting usage, and ongoing maintenance are separate
+responsibilities. Domain and billing accounts should remain organisation-owned.
+Verify current provider limits before adding large media libraries; do not
+assume a custom domain changes hosting capacity or that exceeding a free limit
+will automatically result in an acceptable upgrade.
+
+## Content approval and remaining work
+
+The reviewed About and four programme pages are in place. Other editorial and
+operational work remains; the repository should not be read as approval of
+every legacy claim or future service.
+
+| Area | Outstanding review |
+|---|---|
+| Aggregate impact and testimonials | Some homepage/Impact counters and the older homepage testimonial remain marked `DRAFT-UNVERIFIED` in source. Confirm or replace them before a public content release. |
+| Founding timeline | Reconcile the guide's 2021 founding date with its separate "Since 2020" reach wording. The new About page does not invent a reconciliation. |
+| Team profiles | Confirm current preferred names, roles, biographies, and affiliations. Existing coordinator profiles remain on Home. |
+| Partners and funders | Review names, relationship types, destinations, and listing/logo permissions. The legacy CLF listing still needs the approved Clara Lionel Foundation correction. |
+| Support examples | Confirm the current JMD contribution examples and their scope before treating them as approved costings. |
+| Enquiry handling | Review response ownership, follow-up, privacy/consent wording, retention, and any proposed on-site form experience. |
+| Knowledge Hub growth | Replace remaining "In development" collection descriptions with approved items; grow participant outputs, photo stories, videos, and publications without fabricating content. |
+| Future publishing and subscriptions | Choose ownership and operating requirements before adding a CMS, newsletter service, or payment integration. |
+
+These items should be resolved through the same feature-by-feature preview and
+approval process, rather than silently inventing facts, permissions, or service
+availability.
+
+## Credits and reuse
+
+Organisation copy and programme imagery are supplied for GirlsCARE's website.
+Their presence in this repository does not imply unrestricted permission to
+reuse participant photographs, stories, logos, or third-party publications.
+
+Londrina Solid Black is by Marcelo Magalhaes and is distributed with its
+[SIL Open Font License 1.1](public/assets/fonts/londrina-solid-OFL.txt).
+No repository-wide software licence is currently included; confirm reuse
+permissions with the maintainers.
