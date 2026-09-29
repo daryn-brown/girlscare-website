@@ -275,6 +275,62 @@
   font-size: 1.5rem;
 }
 
+.page-hero--resilience {
+  background: linear-gradient(125deg, var(--purple-deep), var(--ink));
+}
+
+.page-hero--resilience .button--primary {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--ink);
+}
+
+.programme-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.programme-photo-grid figure {
+  margin: 0;
+  overflow: hidden;
+  border: 0.06rem solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.programme-photo-grid img {
+  width: 100%;
+  height: auto;
+}
+
+.programme-photo-grid figcaption {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.programme-photo-grid figcaption strong {
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+
+.programme-cta h2 {
+  font-size: clamp(2.4rem, 4.3vw, 4.25rem);
+}
+
+.programme-cta .section-kicker {
+  margin-top: 0;
+  color: var(--yellow);
+}
+
+.programme-cta :focus-visible {
+  outline-color: var(--yellow);
+}
+
 @media (max-width: 60rem) {
   .page-hero--programme .page-hero__grid,
   .programme-grid {
@@ -303,7 +359,8 @@
   .programme-steps,
   .programme-cohorts,
   .programme-outcomes,
-  .programme-resource-grid {
+  .programme-resource-grid,
+  .programme-photo-grid {
     grid-template-columns: 1fr;
   }
 }

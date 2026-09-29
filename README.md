@@ -12,7 +12,8 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory public
 
 Open `http://127.0.0.1:4173/`. The dedicated Mentorship page is at
 `http://127.0.0.1:4173/programmes/mentorship.html`; About is at
-`http://127.0.0.1:4173/about.html`.
+`http://127.0.0.1:4173/about.html`. Envisioning Resilience is at
+`http://127.0.0.1:4173/programmes/envisioning-resilience.html`.
 
 ## About and organisational identity
 
@@ -34,8 +35,9 @@ feminist-led climate justice identity.
 
 ## Programme pages
 
-`public/programmes/mentorship.html` uses the existing site header, navigation
-script, footer, and brand styles. Additional long-form programme styles live in
+`public/programmes/mentorship.html` and
+`public/programmes/envisioning-resilience.html` use the existing site header,
+navigation script, footer, and brand styles. Shared long-form programme styles live in
 `public/programmes/programme.css`; assets use root-relative paths so direct
 navigation to the nested page works.
 
@@ -48,3 +50,24 @@ historical snapshots, not cumulative totals or current application criteria.
 Related publications have canonical entries in the Knowledge Hub. New quotes,
 photos, eligibility rules, and aggregate figures require the appropriate
 content and usage approval before publication.
+
+Envisioning Resilience entry points lead to its dedicated programme page; the
+existing `impact.html#envisioning-resilience` summary remains available. Its
+audience and outcomes are specific to the Jamaica photography/storytelling work,
+not inherited from Mentorship's cohorts or age range. Existing programme photos
+and their established activity captions are reused; no partner-owned photo
+essays, new portraits, or testimonials have been copied into the site.
+
+The text-only Jamila Falak account follows the supplied content guide and was
+cleared for website publication during the feature review on 29 September 2026.
+New quotes or portraits still require appropriate permission; do not present
+later achievements as caused solely by the programme.
+Programme recruitment dates, current availability, and unconfirmed totals are
+not inferred from historical coverage.
+
+The Knowledge Hub links to the NAP Global Network's Jamaica account,
+Lensational's photo-story collection and programme overview, Climate Home News'
+2026 Jamaica feature, and IISD's account of the earlier Ghana/Kenya pilots.
+The latter is labelled as background on the wider initiative, not evidence of
+GirlsCARE's Jamaica results. Resource links return to the relevant programme;
+original photographs and articles remain with their publishers.
