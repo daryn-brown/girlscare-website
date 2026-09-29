@@ -283,8 +283,17 @@
   background: linear-gradient(125deg, var(--magenta-deep), var(--ink));
 }
 
+.page-hero--care {
+  background: linear-gradient(125deg, #14545b, var(--ink));
+}
+
+.page-hero--care .page-hero__visual img {
+  aspect-ratio: auto;
+}
+
 .page-hero--resilience .button--primary,
-.page-hero--recovery .button--primary {
+.page-hero--recovery .button--primary,
+.page-hero--care .button--primary {
   background: var(--yellow);
   border-color: var(--yellow);
   color: var(--ink);

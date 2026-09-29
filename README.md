@@ -15,6 +15,7 @@ Open `http://127.0.0.1:4173/`. The dedicated Mentorship page is at
 `http://127.0.0.1:4173/about.html`. Envisioning Resilience is at
 `http://127.0.0.1:4173/programmes/envisioning-resilience.html`, and Lend a Girl a
 Hand is at `http://127.0.0.1:4173/programmes/lend-a-girl-a-hand.html`.
+Care Collective is at `http://127.0.0.1:4173/programmes/care-collective.html`.
 
 ## About and organisational identity
 
@@ -87,3 +88,20 @@ claim. No beneficiary totals, specific aid packages, recruitment windows,
 clinical services, or new funding amounts are inferred. Support actions use the
 existing enquiry routes and retain the distinction between donation interest
 and taking payment.
+
+Care Collective has a dedicated page at `public/programmes/care-collective.html`.
+All four programme menu entries now lead to their own pages. The homepage and
+Impact previews, the Knowledge Hub, About values, and related programme copy
+link to Care Collective; `impact.html#care-collective` remains available.
+The Knowledge Hub's four programme previews use two columns on wide screens
+and a single column on narrower screens.
+
+Care content follows the guide's description of emotional, psychological,
+social, and material wellbeing as part of sustainable activism and leadership.
+The Q2 2026 quarterly session and the Feminist Collective Care & 2026 Visioning
+Retreat in Treasure Beach reuse existing activity captions and photos. These
+historical examples do not establish a future schedule or open enrolment.
+No counselling, clinical treatment, crisis hotline, participant eligibility,
+or measured recovery outcomes are claimed. Broader psychosocial-support
+priorities are explicitly presented as organisation-wide GirlsCARE context.
+The enquiry actions use the existing network and partnership pathways.
