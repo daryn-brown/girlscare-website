@@ -141,18 +141,6 @@
   display: none;
 }
 
-@media (scripting: none) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-@media (scripting: none) and (max-width: 46rem) {
-  .site-header {
-    position: static;
-  }
-}
-
 @media (max-width: 72rem) {
   .knowledge-library__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

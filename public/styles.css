@@ -3652,3 +3652,15 @@ main [id] {
     animation: none !important;
   }
 }
+
+@media (scripting: none) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (scripting: none) and (max-width: 46rem) {
+  .site-header {
+    position: static;
+  }
+}

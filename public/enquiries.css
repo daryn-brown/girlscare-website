@@ -1,0 +1,232 @@
+.page-hero--involvement,
+.page-hero--privacy {
+  background: linear-gradient(125deg, var(--purple-deep), var(--ink));
+}
+
+.page-hero--support {
+  background: linear-gradient(125deg, #14545b, var(--ink));
+}
+
+.page-hero--involvement h1,
+.page-hero--support h1,
+.page-hero--privacy h1 {
+  max-width: 19ch;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+}
+
+.page-hero--involvement .button--primary,
+.page-hero--support .button--primary {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--ink);
+}
+
+.page-hero .button {
+  gap: 0.5rem;
+}
+
+.page-hero :focus-visible {
+  outline-color: var(--yellow);
+}
+
+.journey-hero span {
+  background: var(--magenta-deep);
+}
+
+.pathways h2,
+.privacy-section h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.3vw, 4.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.pathway:nth-child(2) .pathway__heading {
+  background: #831640;
+}
+
+.pathway:nth-child(4) .pathway__heading {
+  background: #14545b;
+}
+
+.pathway__enquiry,
+.support-enquiry {
+  grid-column: 1 / -1;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 0.06rem solid var(--line);
+}
+
+.support-enquiry {
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.enquiry-notice {
+  max-width: 76ch;
+  margin: 0 0 1rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.enquiry-notice a,
+.enquiry-external {
+  color: var(--magenta-deep);
+  text-underline-offset: 0.2em;
+}
+
+.enquiry {
+  border: 0.1rem solid var(--line);
+  border-radius: 0.8rem;
+  background: var(--white);
+  color: var(--ink);
+}
+
+.enquiry > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.7rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+
+.enquiry > summary::-webkit-details-marker {
+  display: none;
+}
+
+.enquiry > summary::marker {
+  content: "";
+}
+
+.enquiry > summary:hover {
+  background: var(--yellow-pale);
+}
+
+.enquiry > summary svg {
+  width: 0.9rem;
+  height: 0.6rem;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  transition: transform 160ms ease;
+}
+
+.enquiry[open] {
+  border-color: var(--purple);
+}
+
+.enquiry[open] > summary svg {
+  transform: rotate(180deg);
+}
+
+.enquiry-body {
+  border-top: 0.06rem solid var(--line);
+}
+
+.enquiry-help {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.enquiry iframe {
+  display: block;
+  width: 100%;
+  min-height: 28rem;
+  height: min(80vh, 52rem);
+  border: 0;
+  border-radius: 0 0 0.7rem 0.7rem;
+  background: var(--white);
+}
+
+.enquiry iframe[hidden] {
+  display: none;
+}
+
+.enquiry-external {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.support-enquiry p {
+  color: var(--ink-soft);
+}
+
+.privacy-section {
+  padding-block: clamp(3.5rem, 6vw, 6rem);
+}
+
+.privacy-section:nth-child(even) {
+  background: var(--paper);
+}
+
+.privacy-section h2 {
+  max-width: 23ch;
+  margin: 0 0 1.5rem;
+}
+
+.privacy-copy {
+  max-width: 76ch;
+}
+
+.privacy-copy p,
+.privacy-copy li {
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.privacy-copy p {
+  margin: 0 0 1.2rem;
+}
+
+.privacy-copy ul {
+  display: grid;
+  gap: 0.6rem;
+  padding-left: 1.25rem;
+}
+
+.privacy-copy a {
+  color: var(--magenta-deep);
+  text-underline-offset: 0.2em;
+}
+
+@media (max-width: 46rem) {
+  .pathway__enquiry {
+    padding: 1.5rem 0 0;
+  }
+
+  .pathway__enquiry > .enquiry-notice,
+  .pathway__enquiry > .enquiry-external {
+    margin-inline: 1.25rem;
+  }
+
+  .pathway__enquiry > .enquiry-external {
+    margin-bottom: 1rem;
+  }
+
+  .support-enquiry {
+    padding: 1.25rem 0;
+  }
+
+  .support-enquiry > .enquiry-notice,
+  .support-enquiry > .enquiry-external {
+    margin-inline: 1.25rem;
+  }
+}

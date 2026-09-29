@@ -49,8 +49,9 @@ server to resolve consistently.
 | [Care Collective](public/programmes/care-collective.html) | `/programmes/care-collective.html` | Collective care, sustainable leadership, shared sessions, retreat activity, and organisational wellbeing priorities. |
 | [Impact](public/impact.html) | `/impact.html` | Historical cohort snapshots, nine outcome themes, three milestones, participant-story links, compact programme summaries, and scoped regional context. |
 | [Knowledge Hub](public/knowledge-hub.html) | `/knowledge-hub.html` | A searchable, type-filtered library of six external resource entries and one approved participant story, with publisher context and four programme previews. |
-| [Get Involved](public/get-involved.html) | `/get-involved.html` | Network, volunteer, mentor, and partnership interest pathways using external Google Forms. |
-| [Support Our Work](public/support.html) | `/support.html` | Funding and in-kind support information and a donation-interest pathway. It does not process payments. |
+| [Get Involved](public/get-involved.html) | `/get-involved.html` | Network, volunteer, mentor, and partnership pathways with Google Forms loaded on request inside the site. |
+| [Support Our Work](public/support.html) | `/support.html` | Qualitative funding/in-kind priorities and an on-site donation-interest form. It does not process payments. |
+| [Privacy and Enquiries](public/privacy.html) | `/privacy.html` | Form-provider information, submission boundaries, minimisation guidance, and the existing contact channel for questions. |
 | [Not found](public/404.html) | Unmatched Hosting URLs | The not-found response used by Firebase Hosting. |
 
 ### Visitor experience
@@ -62,6 +63,9 @@ server to resolve consistently.
 - Knowledge Hub search and type filters run in the browser, with a result count,
   clear controls, and an explicit no-results state. All resources remain readable
   without JavaScript.
+- Participation links stay on the website. Google Forms load only when their
+  native disclosure panels are opened, with direct new-tab links always available
+  as an alternative.
 - The mobile menu supports touch and keyboard interaction. Desktop submenus
   support disclosure buttons, arrow-key entry, and Escape.
 - Activity-gallery captions are available through hover/focus and touch
@@ -148,6 +152,48 @@ To add an approved resource:
 5. Confirm the original resource, permissions, fragment links, search results,
    and no-JavaScript presentation before release.
 
+### Participation and support
+
+The five existing Google Forms were confirmed as approved and receiving
+responses on 29 September 2026. Their fields and response destinations are
+unchanged. The website embeds them on request rather than replacing them with
+a new submission backend.
+
+| Interest | On-site destination |
+|---|---|
+| Join the network | `/get-involved.html#join` |
+| Volunteer or share technical expertise | `/get-involved.html#volunteer` |
+| Become a mentor | `/get-involved.html#mentor` |
+| Partnerships, media/storytelling, and regional networks | `/get-involved.html#partner` |
+| Funding or in-kind support | `/support.html#donation-interest` |
+
+These pathways cover the guide's mentorship, partnerships, funding, technical
+expertise, storytelling/amplification, community support, and networks/solidarity
+opportunities. They express interest, not guaranteed places or confirmed
+recruitment windows.
+
+`enquiries.js` sets an iframe's approved Google Forms URL only when its
+`details.enquiry` panel opens. Collapsing and reopening a panel on the same page
+does not reload the frame or deliberately discard entered answers. Provider
+content, validation, sign-in requirements, submission, and confirmation remain
+Google Forms behaviour; this website does not read responses or infer a
+successful submission from an iframe loading.
+
+Each form has a provider notice, a privacy-information link, a descriptive
+iframe title, and a direct Google link opening in a new tab. Without JavaScript,
+the direct links remain available and no embedded forms are loaded.
+
+The support examples now describe areas of work rather than unverified JMD
+amounts or fixed-price packages. Donation interest does not process payment,
+complete a donation, issue receipts, or establish tax benefits. The existing
+Instagram contact remains in use; no email address or retention period has
+been invented.
+
+`privacy.html` documents the technical enquiry flow and refers questions about
+response access, retention, correction, and deletion to GirlsCARE. Account
+permissions, notification settings, safeguarding/consent arrangements, and
+formal privacy requirements remain the organisation's responsibility.
+
 ## Screenshots
 
 Captured from this repository's website on **29 September 2026**. Desktop
@@ -166,6 +212,15 @@ an earlier release until a separate Firebase deployment is approved and run.
 | Knowledge Hub library | Programme previews |
 |---|---|
 | ![Knowledge Hub search, resource-type filter, and available resources](docs/screenshots/knowledge-hub-library.png) | ![Knowledge Hub previews for the four GirlsCARE programmes](docs/screenshots/knowledge-hub-programmes.png) |
+
+### Participation and support
+
+| Get Involved | Support Our Work |
+|---|---|
+| ![On-site network, volunteer, mentor, and partnership pathways](docs/screenshots/get-involved-desktop.png) | ![Support priorities and a donation-interest pathway without fixed funding amounts](docs/screenshots/support-desktop.png) |
+
+These screenshots show the entry pages, not private form responses. Embedded
+forms are loaded only after a visitor opens a panel.
 
 ### Programme pages
 
@@ -208,6 +263,9 @@ free of private form responses, account details, and browser overlays.
     knowledge-hub.js          Client-side search, filtering, and fragment support
     get-involved.html         Participation pathways
     support.html              Support and donation interest
+    privacy.html              Enquiry-provider and privacy information
+    enquiries.css             Participation, support, and privacy-page styles
+    enquiries.js              On-demand Google Forms embeds
     404.html                  Hosting not-found page
     styles.css                Shared brand, layout, and responsive styles
     site.js                   Navigation and gallery enhancements
@@ -240,7 +298,8 @@ justice identity and use the established programme names.
 | Programme description | Its dedicated page, the homepage card, the Impact summary, and any Knowledge Hub preview. |
 | Organisation identity | About, homepage introductory copy and metadata, and the site-wide footer description. |
 | Resource or publication | The canonical Knowledge Hub entry, its type/publisher metadata, the initial result count, and programme links pointing to it. |
-| Shared visual behaviour | `styles.css` and `site.js`; use `about.css`, `impact.css`, `knowledge-hub.css`, or `programmes/programme.css` for page-family-specific presentation. |
+| Shared visual behaviour | `styles.css` and `site.js`; use `about.css`, `impact.css`, `knowledge-hub.css`, `enquiries.css`, or `programmes/programme.css` for page-family-specific presentation. |
+| Enquiry form | Its approved `data-src` embed URL, matching direct link, iframe title, related on-site navigation, and privacy/provider information. |
 | Production domain | Canonical URLs, Open Graph URLs, social-image URLs, and the Hosting/domain configuration. |
 
 Keep page titles, descriptions, social-preview metadata, heading hierarchy,
@@ -304,7 +363,7 @@ represent unique people or repeat programme places.
 
 | Service | Current use | Maintenance considerations |
 |---|---|---|
-| Google Forms | Separate network, volunteer, mentor, partnership, and donation-interest destinations. | Confirm form ownership, availability, questions, response recipients, notifications, and privacy arrangements before changing a flow. The site currently links out; it does not host a submission backend. |
+| Google Forms | Five on-request embeds for network, volunteer, mentor, partnership, and donation interest, each with a direct new-tab alternative. | Confirm ownership, questions, recipients, notifications, and privacy arrangements before changing a destination. Responses are handled by Google Forms, not by a backend in this repository. |
 | OpenStreetMap | Embedded regional maps on Home and Impact. | Keep the title and geographic framing accurate. Maps are contextual, not proof of programme reach at every marked location. |
 | Google Fonts | Jost body/interface typeface. | Requires an external font request; system-font fallbacks are defined. |
 | Local display font | Londrina Solid Black in `public/assets/fonts/`. | Preserve its included SIL Open Font License. |
@@ -345,6 +404,9 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory public
   disabled. Check the browser console and local asset requests for errors.
 - For library changes, test each resource type, combined search/type filters,
   no matches, both clear controls, and direct resource fragments after filtering.
+- For enquiry changes, check that no Google Forms request occurs before a panel
+  opens, that the correct form loads, that collapse/reopen does not reload it,
+  and that direct links and privacy information work with JavaScript disabled.
 - Check that externally hosted resources are the intended publications. Use
   approved dummy data and coordinate with the response owner if testing a form;
   do not submit unsolicited entries to live forms.
@@ -440,8 +502,8 @@ every legacy claim or future service.
 | Founding timeline | Reconcile the guide's 2021 founding date with its separate "Since 2020" reach wording. The new About page does not invent a reconciliation. |
 | Team profiles | Confirm current preferred names, roles, biographies, and affiliations. Existing coordinator profiles remain on Home. |
 | Partners and funders | Review names, relationship types, destinations, and listing/logo permissions. The legacy CLF listing still needs the approved Clara Lionel Foundation correction. |
-| Support examples | Confirm the current JMD contribution examples and their scope before treating them as approved costings. |
-| Enquiry handling | Review response ownership, follow-up, privacy/consent wording, retention, and any proposed on-site form experience. |
+| Support costings | Published examples are qualitative. Confirm any future amounts, earmarking, or specific contribution commitments before adding them. |
+| Enquiry handling | Maintain response ownership, follow-up, account permissions, notification settings, privacy/consent arrangements, and retention. The website's provider-information page does not invent those operational policies. |
 | Knowledge Hub growth | Add further approved reports, blogs, mentee projects, poems, reflections, photo stories, videos, and research/advocacy resources as they become available. New media needs credits, permissions, and appropriate captions/transcripts; do not add empty collection promises. |
 | Future publishing and subscriptions | Choose ownership and operating requirements before adding a CMS, newsletter service, or payment integration. |
 
