@@ -48,7 +48,7 @@ server to resolve consistently.
 | [Envisioning Resilience](public/programmes/envisioning-resilience.html) | `/programmes/envisioning-resilience.html` | Photography, visual storytelling, women's lived experience, adaptation dialogue, and programme resources. |
 | [Care Collective](public/programmes/care-collective.html) | `/programmes/care-collective.html` | Collective care, sustainable leadership, shared sessions, retreat activity, and organisational wellbeing priorities. |
 | [Impact](public/impact.html) | `/impact.html` | Historical cohort snapshots, nine outcome themes, three milestones, participant-story links, compact programme summaries, and scoped regional context. |
-| [Knowledge Hub](public/knowledge-hub.html) | `/knowledge-hub.html` | Reports, programme background, press coverage, photo-story links, four programme previews, and Jamila Falak's participant story. |
+| [Knowledge Hub](public/knowledge-hub.html) | `/knowledge-hub.html` | A searchable, type-filtered library of six external resource entries and one approved participant story, with publisher context and four programme previews. |
 | [Get Involved](public/get-involved.html) | `/get-involved.html` | Network, volunteer, mentor, and partnership interest pathways using external Google Forms. |
 | [Support Our Work](public/support.html) | `/support.html` | Funding and in-kind support information and a donation-interest pathway. It does not process payments. |
 | [Not found](public/404.html) | Unmatched Hosting URLs | The not-found response used by Firebase Hosting. |
@@ -59,6 +59,9 @@ server to resolve consistently.
   on Home and Impact.
 - Programme pages have in-page navigation, contextual activity photographs, and
   links to related pages and Knowledge Hub resources.
+- Knowledge Hub search and type filters run in the browser, with a result count,
+  clear controls, and an explicit no-results state. All resources remain readable
+  without JavaScript.
 - The mobile menu supports touch and keyboard interaction. Desktop submenus
   support disclosure buttons, arrow-key entry, and Escape.
 - Activity-gallery captions are available through hover/focus and touch
@@ -110,11 +113,46 @@ Jamaican community activities. The map is regional context only and has no
 invented office or participant-location pin. Parish and country examples are
 not treated as a confirmed delivery footprint for every programme.
 
+### Knowledge Hub library
+
+The library contains seven entries: the six supplied external resources and the
+approved Jamila Falak story. It shows only populated resource types: impact
+reports, programme background, press coverage, photo stories, and participant
+stories. Empty collection promises and unprovided publication placeholders have
+been removed.
+
+Search matches words in the cards' titles, summaries, and publisher/programme
+metadata. It is not a full-text search of externally hosted articles or reports,
+and it does not send queries to a server. Search and resource-type filters work
+together; clearing them restores the complete catalogue.
+Without JavaScript, controls stay hidden and the full catalogue remains visible.
+Fragment links use native jumps, with a non-sticky mobile header so content is
+not covered by the expanded navigation.
+
+Existing resource IDs and `#library`, `#stories`, and `#jamila-falak` links remain
+stable. Following a resource fragment reveals that card even if a previous
+filter would hide it. The full participant narrative stays at
+`#jamila-falak`; its library card is a preview, not a second copy of the story.
+
+To add an approved resource:
+
+1. Add an article inside `#resource-grid` with a unique, stable `id` and a
+   `data-resource-type` matching the type selector.
+2. Include its title, publisher or creator, programme/scope, accurate summary,
+   approved destination, and related programme link. Add a date only when known.
+3. Add a new type option only when there is an approved item of that type. Update
+   the initial static result count for readers without JavaScript; the enhanced
+   count is calculated from the cards.
+4. Keep cards visible in the source HTML. Search controls are progressively
+   enabled by `knowledge-hub.js`; no CMS or publication backend is required.
+5. Confirm the original resource, permissions, fragment links, search results,
+   and no-JavaScript presentation before release.
+
 ## Screenshots
 
 Captured from this repository's website on **29 September 2026**. Desktop
 page views use a 1280 x 900 viewport; mobile views use 390 x 1000. The Knowledge
-Hub image is a detail of its programme-preview grid.
+Hub programme-preview image is a detail of its grid.
 
 These images document the repository version. The hosted website can reflect
 an earlier release until a separate Firebase deployment is approved and run.
@@ -125,7 +163,9 @@ an earlier release until a separate Firebase deployment is approved and run.
 |---|---|
 | ![About page with GirlsCARE's identity and founders](docs/screenshots/about-desktop.png) | ![GirlsCARE Impact page with participant outcomes and regional context](docs/screenshots/impact-desktop.png) |
 
-![Knowledge Hub previews for the four GirlsCARE programmes](docs/screenshots/knowledge-hub-programmes.png)
+| Knowledge Hub library | Programme previews |
+|---|---|
+| ![Knowledge Hub search, resource-type filter, and available resources](docs/screenshots/knowledge-hub-library.png) | ![Knowledge Hub previews for the four GirlsCARE programmes](docs/screenshots/knowledge-hub-programmes.png) |
 
 ### Programme pages
 
@@ -164,6 +204,8 @@ free of private form responses, account details, and browser overlays.
     impact.html              Outcomes, milestones, stories, and regional reach
     impact.css               Impact, snapshot, and participant-story styles
     knowledge-hub.html        Resources and programme previews
+    knowledge-hub.css         Library layout and discovery controls
+    knowledge-hub.js          Client-side search, filtering, and fragment support
     get-involved.html         Participation pathways
     support.html              Support and donation interest
     404.html                  Hosting not-found page
@@ -197,8 +239,8 @@ justice identity and use the established programme names.
 | Shared navigation or footer | Every public content page, including the nested programme pages. There is no generated shared-template layer. |
 | Programme description | Its dedicated page, the homepage card, the Impact summary, and any Knowledge Hub preview. |
 | Organisation identity | About, homepage introductory copy and metadata, and the site-wide footer description. |
-| Resource or publication | The canonical Knowledge Hub entry and the programme links pointing to it. |
-| Shared visual behaviour | `styles.css` and `site.js`; use `about.css`, `impact.css`, or `programmes/programme.css` for page-family-specific presentation. |
+| Resource or publication | The canonical Knowledge Hub entry, its type/publisher metadata, the initial result count, and programme links pointing to it. |
+| Shared visual behaviour | `styles.css` and `site.js`; use `about.css`, `impact.css`, `knowledge-hub.css`, or `programmes/programme.css` for page-family-specific presentation. |
 | Production domain | Canonical URLs, Open Graph URLs, social-image URLs, and the Hosting/domain configuration. |
 
 Keep page titles, descriptions, social-preview metadata, heading hierarchy,
@@ -301,6 +343,8 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory public
   Escape, skip links, gallery captions, and reduced-motion preferences.
 - Confirm essential information and links remain usable with JavaScript
   disabled. Check the browser console and local asset requests for errors.
+- For library changes, test each resource type, combined search/type filters,
+  no matches, both clear controls, and direct resource fragments after filtering.
 - Check that externally hosted resources are the intended publications. Use
   approved dummy data and coordinate with the response owner if testing a form;
   do not submit unsolicited entries to live forms.
@@ -398,7 +442,7 @@ every legacy claim or future service.
 | Partners and funders | Review names, relationship types, destinations, and listing/logo permissions. The legacy CLF listing still needs the approved Clara Lionel Foundation correction. |
 | Support examples | Confirm the current JMD contribution examples and their scope before treating them as approved costings. |
 | Enquiry handling | Review response ownership, follow-up, privacy/consent wording, retention, and any proposed on-site form experience. |
-| Knowledge Hub growth | Replace remaining "In development" collection descriptions with approved items; grow participant outputs, photo stories, videos, and publications without fabricating content. |
+| Knowledge Hub growth | Add further approved reports, blogs, mentee projects, poems, reflections, photo stories, videos, and research/advocacy resources as they become available. New media needs credits, permissions, and appropriate captions/transcripts; do not add empty collection promises. |
 | Future publishing and subscriptions | Choose ownership and operating requirements before adding a CMS, newsletter service, or payment integration. |
 
 These items should be resolved through the same feature-by-feature preview and

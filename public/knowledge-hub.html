@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#e23171" />
-    <!-- DRAFT: attach approved documents and publication links as they are supplied. -->
     <meta
       name="description"
-      content="Explore GirlsCARE policy work, reports, publications, press updates, and stories about young women leading climate action across the Caribbean."
+      content="Browse GirlsCARE's resource library: impact reporting, programme background, press coverage, photo stories, and participant perspectives on climate justice."
     />
     <title>Knowledge Hub | GirlsCARE</title>
     <link rel="canonical" href="https://girlscarejamaica.web.app/knowledge-hub.html" />
@@ -17,7 +16,7 @@
     <meta property="og:title" content="Knowledge Hub | GirlsCARE" />
     <meta
       property="og:description"
-      content="Explore GirlsCARE policy work, reports, publications, press updates, and stories about young women leading climate action."
+      content="Find reports, programme learning, photo stories, and participant perspectives from GirlsCARE and its collaborators."
     />
     <meta property="og:url" content="https://girlscarejamaica.web.app/knowledge-hub.html" />
     <meta property="og:image" content="https://girlscarejamaica.web.app/assets/girlscare-social-preview-v4.jpg" />
@@ -32,7 +31,7 @@
     <meta name="twitter:title" content="Knowledge Hub | GirlsCARE" />
     <meta
       name="twitter:description"
-      content="Explore GirlsCARE policy work, reports, publications, press updates, and stories from across the Caribbean."
+      content="Explore GirlsCARE's curated library of reports, programme resources, press coverage, and participant stories."
     />
     <meta name="twitter:image" content="https://girlscarejamaica.web.app/assets/girlscare-social-preview-v4.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,6 +49,7 @@
     />
     <link rel="stylesheet" href="styles.css?v=25" />
     <link rel="stylesheet" href="impact.css?v=1" />
+    <link rel="stylesheet" href="knowledge-hub.css?v=1" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -119,88 +119,83 @@
         <div class="section-shell page-hero__grid">
           <div class="page-hero__copy">
             <p class="section-kicker">Knowledge Hub</p>
-            <h1 id="page-title">Knowledge to move climate justice forward</h1>
+            <h1 id="page-title">Knowledge for climate justice</h1>
             <p>
-              A growing home for GirlsCARE policy, evidence, perspectives, and
-              stories from young women shaping climate action across the Caribbean.
+              Reports, programme learning, photo stories, and participant
+              perspectives, brought together to make GirlsCARE's work
+              and the learning around it easier to explore.
             </p>
             <div class="hero__actions">
               <a class="button button--primary" href="#library">Explore the library</a>
-              <a class="button button--secondary" href="#stories">Read field stories</a>
+              <a class="button button--secondary" href="#jamila-falak">Read a participant story</a>
             </div>
           </div>
           <figure class="page-hero__visual">
             <img
               src="assets/knowledge-hub-girlscare-group.jpg"
-              alt="GirlsCARE participants and supporters gathered together at an event"
+              width="1800"
+              height="1201"
+              alt="Participants gathered for the 2025 Envisioning Resilience policy dialogue"
+              fetchpriority="high"
             />
+            <figcaption class="knowledge-hero-caption">Envisioning Resilience policy dialogue, 2025.</figcaption>
           </figure>
-        </div>
-      </section>
-
-      <section class="knowledge-types" aria-labelledby="types-title">
-        <div class="section-shell">
-          <div class="section-heading">
-            <p class="section-kicker">Explore by type</p>
-            <h2 id="types-title">A wider body of work in one place</h2>
-            <p>
-              The hub is designed to make practical learning, public advocacy,
-              organisational evidence, and community voices easier to discover.
-            </p>
-          </div>
-          <ul class="knowledge-types__grid">
-            <li class="knowledge-types__card">
-              <span aria-hidden="true">01</span>
-              <h3>Policy &amp; advocacy</h3>
-              <p>Policy documents, briefs, recommendations, and tools developed through GirlsCARE's work.</p>
-            </li>
-            <li class="knowledge-types__card">
-              <span aria-hidden="true">02</span>
-              <h3>Reports &amp; learning</h3>
-              <p>Narrative reports, programme learning, impact summaries, and evidence from our initiatives.</p>
-            </li>
-            <li class="knowledge-types__card">
-              <span aria-hidden="true">03</span>
-              <h3>Press &amp; announcements</h3>
-              <p>Press releases, organisational updates, milestones, and opportunities from the network.</p>
-            </li>
-            <li class="knowledge-types__card">
-              <span aria-hidden="true">04</span>
-              <h3>Publications &amp; perspectives</h3>
-              <p>Thought pieces and research translating Caribbean feminist climate leadership into action.</p>
-            </li>
-            <li class="knowledge-types__card">
-              <span aria-hidden="true">05</span>
-              <h3>Stories from the network</h3>
-              <p>First-hand reflections, field notes, and lived experience from mentors, mentees, and communities.</p>
-            </li>
-          </ul>
         </div>
       </section>
 
       <section class="knowledge-library" id="library" aria-labelledby="library-title">
         <div class="section-shell">
           <div class="section-heading">
-            <p class="section-kicker">Resource Library</p>
-            <h2 id="library-title">Resources and collections</h2>
+            <p class="section-kicker" id="types-title">Resource library</p>
+            <h2 id="library-title">Explore the work and the learning</h2>
             <p>
-              Read published programme stories and impact reporting, alongside
-              the collections being prepared for the library.
+              Browse published resources and a participant story from the network.
+              Reports and articles link to their publishers; photo stories
+              remain with their original collections.
             </p>
           </div>
-          <div class="knowledge-library__grid">
-            <article class="knowledge-collection" id="girlscare-at-five">
+          <form class="knowledge-filters" id="resource-filters" role="search" aria-label="Search the resource library" hidden>
+            <div class="knowledge-filter-field">
+              <label for="resource-search">Search the library</label>
+              <input id="resource-search" name="q" type="search" placeholder="Title, topic, or publisher" aria-controls="resource-grid" autocomplete="off" />
+            </div>
+            <div class="knowledge-filter-field">
+              <label for="resource-type">Resource type</label>
+              <select id="resource-type" name="type" aria-controls="resource-grid">
+                <option value="all">All resource types</option>
+                <option value="report">Impact reports</option>
+                <option value="background">Programme background</option>
+                <option value="press">Press coverage</option>
+                <option value="photo-story">Photo stories</option>
+                <option value="participant-story">Participant stories</option>
+              </select>
+            </div>
+            <button class="button button--secondary" type="reset">Clear filters</button>
+          </form>
+          <p class="knowledge-results" id="resource-count" role="status" aria-live="polite" aria-atomic="true">Showing 7 of 7 resources.</p>
+          <noscript>
+            <p class="knowledge-library-note">All resources are available below. Search and filtering require JavaScript.</p>
+          </noscript>
+          <div class="knowledge-empty" id="resource-empty" hidden>
+            <h3>No resources match these filters</h3>
+            <p>Try a different search or resource type, or return to the full library.</p>
+            <button class="button button--secondary" id="show-all-resources" type="button">Show all resources</button>
+          </div>
+          <div class="knowledge-library__grid" id="resource-grid">
+            <article class="knowledge-collection" id="girlscare-at-five" data-resource-type="report">
               <p class="knowledge-collection__status">Impact report</p>
               <h3>GirlsCARE at 5</h3>
+              <p class="knowledge-resource-meta">GirlsCARE &middot; Organisation-wide</p>
               <p>
                 Explore GirlsCARE's impact report for a wider view of the
                 organisation's work, learning, and regional connections.
               </p>
               <a class="program-card__more" href="https://girlscarejaimpact2025.my.canva.site/">Read the GirlsCARE impact report <span aria-hidden="true">&rarr;</span></a>
             </article>
-            <article class="knowledge-collection" id="mentorship-climate-tracker-2025">
+            <article class="knowledge-collection" id="mentorship-climate-tracker-2025" data-resource-type="press">
               <p class="knowledge-collection__status">Press &middot; 2025</p>
               <h3>Mentoring the next generation of women in climate</h3>
+              <p class="knowledge-resource-meta">Climate Tracker Caribbean &middot; Mentorship</p>
               <p>
                 Climate Tracker Caribbean's feature on the GirlsCARE mentorship
                 programme and young women's climate leadership.
@@ -208,9 +203,10 @@
               <a class="program-card__more" href="https://climatetrackercaribbean.org/climate-justice/girlscare-mentoring-the-next-generation-of-women-in-climate/">Read the Climate Tracker feature <span aria-hidden="true">&rarr;</span></a>
               <p><a href="programmes/mentorship.html">Explore the Mentorship programme</a></p>
             </article>
-            <article class="knowledge-collection" id="envisioning-resilience-nap">
+            <article class="knowledge-collection" id="envisioning-resilience-nap" data-resource-type="background">
               <p class="knowledge-collection__status">Programme background</p>
               <h3>Envisioning Resilience in Jamaica</h3>
+              <p class="knowledge-resource-meta">NAP Global Network &middot; Jamaica</p>
               <p>
                 The NAP Global Network's account of the Jamaica collaboration,
                 connecting women's photography and storytelling with
@@ -219,9 +215,10 @@
               <a class="program-card__more" href="https://napglobalnetwork.org/2023/06/envisioning-resilience-in-jamaica-women-using-visual-storytelling/">Read the NAP Global Network account <span aria-hidden="true">&rarr;</span></a>
               <p><a href="programmes/envisioning-resilience.html">Explore Envisioning Resilience</a></p>
             </article>
-            <article class="knowledge-collection" id="envisioning-resilience-lensational">
+            <article class="knowledge-collection" id="envisioning-resilience-lensational" data-resource-type="photo-story">
               <p class="knowledge-collection__status">Photo stories</p>
               <h3>Lensational's photo-story collection</h3>
+              <p class="knowledge-resource-meta">Lensational &middot; Multiple locations</p>
               <p>
                 Browse visual stories published by Lensational, and explore
                 its overview of the Envisioning Resilience initiative.
@@ -231,9 +228,10 @@
               <p><a href="https://lensational.org/programmes/envisioningresilience/">Read Lensational's programme overview</a></p>
               <p><a href="programmes/envisioning-resilience.html">Explore Envisioning Resilience</a></p>
             </article>
-            <article class="knowledge-collection" id="envisioning-resilience-climate-home">
+            <article class="knowledge-collection" id="envisioning-resilience-climate-home" data-resource-type="press">
               <p class="knowledge-collection__status">Press &middot; 2026</p>
               <h3>Women in Jamaica are opening eyes with climate photography</h3>
+              <p class="knowledge-resource-meta">Climate Home News &middot; Jamaica</p>
               <p>
                 Climate Home News reports on women documenting climate
                 experience in Jamaica and sharing their perspectives
@@ -242,9 +240,10 @@
               <a class="program-card__more" href="https://www.climatechangenews.com/2026/06/23/women-in-jamaica-are-opening-eyes-with-climate-photography/">Read the Climate Home News feature <span aria-hidden="true">&rarr;</span></a>
               <p><a href="programmes/envisioning-resilience.html">Explore Envisioning Resilience</a></p>
             </article>
-            <article class="knowledge-collection" id="envisioning-resilience-iisd">
-              <p class="knowledge-collection__status">The wider initiative</p>
+            <article class="knowledge-collection" id="envisioning-resilience-iisd" data-resource-type="background">
+              <p class="knowledge-collection__status">Programme background</p>
               <h3>Visual storytelling and adaptation dialogue</h3>
+              <p class="knowledge-resource-meta">IISD &middot; Ghana and Kenya</p>
               <p>
                 IISD describes the photography and storytelling model
                 through Envisioning Resilience's pilots in Ghana and Kenya,
@@ -253,65 +252,42 @@
               <a class="program-card__more" href="https://www.iisd.org/articles/success-story/envisioning-resilience-visual-storytelling">Read the IISD background feature <span aria-hidden="true">&rarr;</span></a>
               <p><a href="programmes/envisioning-resilience.html">Explore the work in Jamaica</a></p>
             </article>
-            <!-- DRAFT: replace the remaining collection summaries with approved resources. -->
-            <article class="knowledge-collection">
-              <p class="knowledge-collection__status">In development</p>
-              <h3>Policy &amp; advocacy collection</h3>
+            <article class="knowledge-collection" id="jamila-falak-resource" data-resource-type="participant-story">
+              <p class="knowledge-collection__status">Participant story</p>
+              <h3>Jamila Falak's continuing journey</h3>
+              <p class="knowledge-resource-meta">GirlsCARE &middot; Envisioning Resilience</p>
               <p>
-                GirlsCARE policy documents and a forthcoming policy brief will sit
-                together as a practical advocacy collection.
+                Read how photography and storytelling became part of
+                Jamila's wider advocacy and professional journey.
               </p>
-              <ul>
-                <li>Policy documents developed through GirlsCARE initiatives</li>
-                <li>Forthcoming policy brief</li>
-                <li>Advocacy tools and recommendations</li>
-              </ul>
-            </article>
-            <article class="knowledge-collection">
-              <p class="knowledge-collection__status">In development</p>
-              <h3>Reports &amp; impact learning</h3>
-              <p>
-                Narrative reports and programme evidence will connect what
-                GirlsCARE delivered with what participants and communities experienced.
-              </p>
-              <ul>
-                <li>CARE narrative reports</li>
-                <li>Programme and initiative reports</li>
-                <li>Impact data, learning notes, and reflections</li>
-              </ul>
-            </article>
-            <article class="knowledge-collection">
-              <p class="knowledge-collection__status">In development</p>
-              <h3>News, publications &amp; perspectives</h3>
-              <p>
-                A combined newsroom and ideas shelf will make timely updates and
-                longer-form thinking easy to find.
-              </p>
-              <ul>
-                <li>Press releases and announcements</li>
-                <li>Publications and thought pieces</li>
-                <li>Media, milestone, and event updates</li>
-              </ul>
+              <a class="program-card__more" href="#jamila-falak">Read Jamila's story <span aria-hidden="true">&rarr;</span></a>
+              <p><a href="programmes/envisioning-resilience.html">Explore Envisioning Resilience</a></p>
             </article>
           </div>
+          <p class="knowledge-library-note">
+            This is a curated library of available resources. Original articles,
+            reports, and photo stories remain with their publishers.
+          </p>
         </div>
       </section>
 
       <section class="knowledge-stories" id="stories" aria-labelledby="stories-title">
         <div class="section-shell">
           <div class="section-heading">
-            <p class="section-kicker">Stories from the network</p>
+            <p class="section-kicker">Explore by programme</p>
             <h2 id="stories-title">Learning grounded in lived experience</h2>
             <p>
-              These previews show how the hub can connect programme context,
-              personal perspective, and practical climate action.
+              Meet the programmes behind the learning, stories, and
+              practical climate action.
             </p>
           </div>
           <div class="knowledge-stories__grid">
             <article class="knowledge-story">
               <img
-                src="assets/mentorship-network.jpg"
-                alt="GirlsCARE mentorship participants and supporters gathered together"
+                src="assets/homepage-mentorship-participants.jpg"
+                width="1800"
+                height="1200"
+                alt="Three GirlsCARE mentorship participants smiling together"
                 loading="lazy"
               />
               <div>
@@ -473,5 +449,6 @@
       </div>
     </footer>
     <script src="site.js?v=6"></script>
+    <script src="knowledge-hub.js?v=1"></script>
   </body>
 </html>
