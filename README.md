@@ -518,7 +518,7 @@ deployment; reverting Git alone does not roll back the hosted site.
 
 | Resource | Cache policy |
 |---|---|
-| `.html` files | `no-cache, must-revalidate` |
+| Root `/` and `.html` files | `no-cache, must-revalidate` |
 | `.xml` and `.txt` files, including sitemap and robots | `no-cache, must-revalidate` |
 | `.css` and `.js` files | Public caching for 7 days |
 | Matched image/icon and WOFF/WOFF2 files | Public caching for 30 days |
